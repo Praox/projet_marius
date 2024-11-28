@@ -1,2 +1,2 @@
-# projet_marius
-autonomous sailboat
+# Project Autonomus Sailboat : Marius
+## autonomous sailboat
