@@ -1,0 +1,565 @@
+, field_11=, field_12=, field_13=, field_14=, field_15=, field_16=, field_17=, field_18=, field_19=, field_20=)>
+Trame brute : b'$GPZDA,145712.70,24,01,2025,00,00*67\r\n'
+Trame décodée : <NMEA(GPZDA, time=14:57:12.700000, day=24, month=1, year=2025, ltzh=00, ltzn=00)>
+Trame brute : b'$WIMWV,,T,,,V*7C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=, reference=T, speed=, speedu=, status=V)>
+Trame brute : b'$WIMWD,,,,,,,,*40\r\n'
+Trame décodée : <NMEA(WIMWD, dirT=, dirTu=, dirM=, dirMu=, speedN=, speedNu=, speedM=, speedMu=)>
+Trame brute : b'$WIMWV,74.1,R,0.8,N,A*19\r\n'
+Trame décodée : <NMEA(WIMWV, angle=74.1, reference=R, speed=0.8, speedu=N, status=A)>
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$GPGGA,145713.20,4308.1810,N,00600.7227,E,2,6,3.4,67.6,M,47.9,M,,*65\r\n'
+Trame décodée : <NMEA(GPGGA, time=14:57:13.200000, lat=43.13635, NS=N, lon=6.012045, EW=E, quality=2, numSV=6, HDOP=3.4, alt=67.6, altUnit=M, sep=47.9, sepUnit=M, diffAge=, diffStation=)>
+Latitude: 43.13635, Longitude: 6.012045
+Trame brute : b'$GPVTG,271.2,T,269.9,M,0.0,N,0.0,K,D*24\r\n'
+Trame décodée : <NMEA(GPVTG, cogt=271.2, cogtUnit=T, cogm=269.9, cogmUnit=M, sogn=0.0, sognUnit=N, sogk=0.0, sogkUnit=K, posMode=D)>
+Erreur de lecture ou de parsing : 'NMEAMessage' object has no attribute 'spd_over_grnd_kmph'
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$WIMDA,30.0852,I,1.0188,B,18.8,C,,,,,,,,,,,,,,*3D\r\n'
+Trame décodée : <NMEA(WIMDA, NOMINAL, field_01=30.0852, field_02=I, field_03=1.0188, field_04=B, field_05=18.8, field_06=C, field_07=, field_08=, field_09=, field_10=, field_11=, field_12=, field_13=, field_14=, field_15=, field_16=, field_17=, field_18=, field_19=, field_20=)>
+Trame brute : b'$GPZDA,145713.70,24,01,2025,00,00*66\r\n'
+Trame décodée : <NMEA(GPZDA, time=14:57:13.700000, day=24, month=1, year=2025, ltzh=00, ltzn=00)>
+Trame brute : b'$WIMWV,,T,,,V*7C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=, reference=T, speed=, speedu=, status=V)>
+Trame brute : b'$WIMWD,,,,,,,,*40\r\n'
+Trame décodée : <NMEA(WIMWD, dirT=, dirTu=, dirM=, dirMu=, speedN=, speedNu=, speedM=, speedMu=)>
+Trame brute : b'$WIMWV,181.2,R,1.6,N,A*2E\r\n'
+Trame décodée : <NMEA(WIMWV, angle=181.2, reference=R, speed=1.6, speedu=N, status=A)>
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$GPGGA,145714.20,4308.1810,N,00600.7227,E,2,7,1.7,67.5,M,47.9,M,,*61\r\n'
+Trame décodée : <NMEA(GPGGA, time=14:57:14.200000, lat=43.13635, NS=N, lon=6.012045, EW=E, quality=2, numSV=7, HDOP=1.7, alt=67.5, altUnit=M, sep=47.9, sepUnit=M, diffAge=, diffStation=)>
+Latitude: 43.13635, Longitude: 6.012045
+Trame brute : b'$GPVTG,271.2,T,269.9,M,0.0,N,0.0,K,D*24\r\n'
+Trame décodée : <NMEA(GPVTG, cogt=271.2, cogtUnit=T, cogm=269.9, cogmUnit=M, sogn=0.0, sognUnit=N, sogk=0.0, sogkUnit=K, posMode=D)>
+Erreur de lecture ou de parsing : 'NMEAMessage' object has no attribute 'spd_over_grnd_kmph'
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$WIMDA,30.0852,I,1.0188,B,18.9,C,,,,,,,,,,,,,,*3C\r\n'
+Trame décodée : <NMEA(WIMDA, NOMINAL, field_01=30.0852, field_02=I, field_03=1.0188, field_04=B, field_05=18.9, field_06=C, field_07=, field_08=, field_09=, field_10=, field_11=, field_12=, field_13=, field_14=, field_15=, field_16=, field_17=, field_18=, field_19=, field_20=)>
+Trame brute : b'$GPZDA,145714.70,24,01,2025,00,00*61\r\n'
+Trame décodée : <NMEA(GPZDA, time=14:57:14.700000, day=24, month=1, year=2025, ltzh=00, ltzn=00)>
+Trame brute : b'$WIMWV,,T,,,V*7C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=, reference=T, speed=, speedu=, status=V)>
+Trame brute : b'$WIMWD,,,,,,,,*40\r\n'
+Trame décodée : <NMEA(WIMWD, dirT=, dirTu=, dirM=, dirMu=, speedN=, speedNu=, speedM=, speedMu=)>
+Trame brute : b'$WIMWV,177.2,R,2.8,N,A*2A\r\n'
+Trame décodée : <NMEA(WIMWV, angle=177.2, reference=R, speed=2.8, speedu=N, status=A)>
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$GPGGA,145715.20,4308.1810,N,00600.7227,E,2,6,3.4,67.4,M,47.9,M,,*61\r\n'
+Trame décodée : <NMEA(GPGGA, time=14:57:15.200000, lat=43.13635, NS=N, lon=6.012045, EW=E, quality=2, numSV=6, HDOP=3.4, alt=67.4, altUnit=M, sep=47.9, sepUnit=M, diffAge=, diffStation=)>
+Latitude: 43.13635, Longitude: 6.012045
+Trame brute : b'$GPVTG,271.2,T,269.9,M,0.0,N,0.0,K,D*24\r\n'
+Trame décodée : <NMEA(GPVTG, cogt=271.2, cogtUnit=T, cogm=269.9, cogmUnit=M, sogn=0.0, sognUnit=N, sogk=0.0, sogkUnit=K, posMode=D)>
+Erreur de lecture ou de parsing : 'NMEAMessage' object has no attribute 'spd_over_grnd_kmph'
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$WIMDA,30.0822,I,1.0187,B,18.9,C,,,,,,,,,,,,,,*34\r\n'
+Trame décodée : <NMEA(WIMDA, NOMINAL, field_01=30.0822, field_02=I, field_03=1.0187, field_04=B, field_05=18.9, field_06=C, field_07=, field_08=, field_09=, field_10=, field_11=, field_12=, field_13=, field_14=, field_15=, field_16=, field_17=, field_18=, field_19=, field_20=)>
+Trame brute : b'$GPZDA,145715.70,24,01,2025,00,00*60\r\n'
+Trame décodée : <NMEA(GPZDA, time=14:57:15.700000, day=24, month=1, year=2025, ltzh=00, ltzn=00)>
+Trame brute : b'$WIMWV,,T,,,V*7C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=, reference=T, speed=, speedu=, status=V)>
+Trame brute : b'$WIMWD,,,,,,,,*40\r\n'
+Trame décodée : <NMEA(WIMWD, dirT=, dirTu=, dirM=, dirMu=, speedN=, speedNu=, speedM=, speedMu=)>
+Trame brute : b'$WIMWV,281.9,R,1.4,N,A*24\r\n'
+Trame décodée : <NMEA(WIMWV, angle=281.9, reference=R, speed=1.4, speedu=N, status=A)>
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$GPGGA,145716.20,4308.1810,N,00600.7227,E,2,6,3.4,67.3,M,47.9,M,,*65\r\n'
+Trame décodée : <NMEA(GPGGA, time=14:57:16.200000, lat=43.13635, NS=N, lon=6.012045, EW=E, quality=2, numSV=6, HDOP=3.4, alt=67.3, altUnit=M, sep=47.9, sepUnit=M, diffAge=, diffStation=)>
+Latitude: 43.13635, Longitude: 6.012045
+Trame brute : b'$GPVTG,271.2,T,269.9,M,0.0,N,0.0,K,D*24\r\n'
+Trame décodée : <NMEA(GPVTG, cogt=271.2, cogtUnit=T, cogm=269.9, cogmUnit=M, sogn=0.0, sognUnit=N, sogk=0.0, sogkUnit=K, posMode=D)>
+Erreur de lecture ou de parsing : 'NMEAMessage' object has no attribute 'spd_over_grnd_kmph'
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$WIMDA,30.0822,I,1.0187,B,18.8,C,,,,,,,,,,,,,,*35\r\n'
+Trame décodée : <NMEA(WIMDA, NOMINAL, field_01=30.0822, field_02=I, field_03=1.0187, field_04=B, field_05=18.8, field_06=C, field_07=, field_08=, field_09=, field_10=, field_11=, field_12=, field_13=, field_14=, field_15=, field_16=, field_17=, field_18=, field_19=, field_20=)>
+Trame brute : b'$GPZDA,145716.70,24,01,2025,00,00*63\r\n'
+Trame décodée : <NMEA(GPZDA, time=14:57:16.700000, day=24, month=1, year=2025, ltzh=00, ltzn=00)>
+Trame brute : b'$WIMWV,,T,,,V*7C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=, reference=T, speed=, speedu=, status=V)>
+Trame brute : b'$WIMWD,,,,,,,,*40\r\n'
+Trame décodée : <NMEA(WIMWD, dirT=, dirTu=, dirM=, dirMu=, speedN=, speedNu=, speedM=, speedMu=)>
+Trame brute : b'$WIMWV,315.5,R,1.1,N,A*21\r\n'
+Trame décodée : <NMEA(WIMWV, angle=315.5, reference=R, speed=1.1, speedu=N, status=A)>
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$GPGGA,145717.20,4308.1810,N,00600.7227,E,2,7,1.7,67.3,M,47.9,M,,*64\r\n'
+Trame décodée : <NMEA(GPGGA, time=14:57:17.200000, lat=43.13635, NS=N, lon=6.012045, EW=E, quality=2, numSV=7, HDOP=1.7, alt=67.3, altUnit=M, sep=47.9, sepUnit=M, diffAge=, diffStation=)>
+Latitude: 43.13635, Longitude: 6.012045
+Trame brute : b'$GPVTG,271.2,T,269.9,M,0.0,N,0.0,K,D*24\r\n'
+Trame décodée : <NMEA(GPVTG, cogt=271.2, cogtUnit=T, cogm=269.9, cogmUnit=M, sogn=0.0, sognUnit=N, sogk=0.0, sogkUnit=K, posMode=D)>
+Erreur de lecture ou de parsing : 'NMEAMessage' object has no attribute 'spd_over_grnd_kmph'
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$WIMDA,30.0792,I,1.0186,B,18.7,C,,,,,,,,,,,,,,*3F\r\n'
+Trame décodée : <NMEA(WIMDA, NOMINAL, field_01=30.0792, field_02=I, field_03=1.0186, field_04=B, field_05=18.7, field_06=C, field_07=, field_08=, field_09=, field_10=, field_11=, field_12=, field_13=, field_14=, field_15=, field_16=, field_17=, field_18=, field_19=, field_20=)>
+Trame brute : b'$GPZDA,145717.70,24,01,2025,00,00*62\r\n'
+Trame décodée : <NMEA(GPZDA, time=14:57:17.700000, day=24, month=1, year=2025, ltzh=00, ltzn=00)>
+Trame brute : b'$WIMWV,,T,,,V*7C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=, reference=T, speed=, speedu=, status=V)>
+Trame brute : b'$WIMWD,,,,,,,,*40\r\n'
+Trame décodée : <NMEA(WIMWD, dirT=, dirTu=, dirM=, dirMu=, speedN=, speedNu=, speedM=, speedMu=)>
+Trame brute : b'$WIMWV,350.4,R,1.8,N,A*28\r\n'
+Trame décodée : <NMEA(WIMWV, angle=350.4, reference=R, speed=1.8, speedu=N, status=A)>
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$GPGGA,145718.20,4308.1810,N,00600.7227,E,2,7,1.7,67.2,M,47.9,M,,*6A\r\n'
+Trame décodée : <NMEA(GPGGA, time=14:57:18.200000, lat=43.13635, NS=N, lon=6.012045, EW=E, quality=2, numSV=7, HDOP=1.7, alt=67.2, altUnit=M, sep=47.9, sepUnit=M, diffAge=, diffStation=)>
+Latitude: 43.13635, Longitude: 6.012045
+Trame brute : b'$GPVTG,271.2,T,269.9,M,0.0,N,0.0,K,D*24\r\n'
+Trame décodée : <NMEA(GPVTG, cogt=271.2, cogtUnit=T, cogm=269.9, cogmUnit=M, sogn=0.0, sognUnit=N, sogk=0.0, sogkUnit=K, posMode=D)>
+Erreur de lecture ou de parsing : 'NMEAMessage' object has no attribute 'spd_over_grnd_kmph'
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$WIMDA,30.0763,I,1.0185,B,18.6,C,,,,,,,,,,,,,,*33\r\n'
+Trame décodée : <NMEA(WIMDA, NOMINAL, field_01=30.0763, field_02=I, field_03=1.0185, field_04=B, field_05=18.6, field_06=C, field_07=, field_08=, field_09=, field_10=, field_11=, field_12=, field_13=, field_14=, field_15=, field_16=, field_17=, field_18=, field_19=, field_20=)>
+Trame brute : b'$GPZDA,145718.70,24,01,2025,00,00*6D\r\n'
+Trame décodée : <NMEA(GPZDA, time=14:57:18.700000, day=24, month=1, year=2025, ltzh=00, ltzn=00)>
+Trame brute : b'$WIMWV,,T,,,V*7C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=, reference=T, speed=, speedu=, status=V)>
+Trame brute : b'$WIMWD,,,,,,,,*40\r\n'
+Trame décodée : <NMEA(WIMWD, dirT=, dirTu=, dirM=, dirMu=, speedN=, speedNu=, speedM=, speedMu=)>
+Trame brute : b'$WIMWV,271.1,R,0.2,N,A*24\r\n'
+Trame décodée : <NMEA(WIMWV, angle=271.1, reference=R, speed=0.2, speedu=N, status=A)>
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$GPGGA,145719.20,4308.1810,N,00600.7227,E,2,7,1.7,67.1,M,47.9,M,,*68\r\n'
+Trame décodée : <NMEA(GPGGA, time=14:57:19.200000, lat=43.13635, NS=N, lon=6.012045, EW=E, quality=2, numSV=7, HDOP=1.7, alt=67.1, altUnit=M, sep=47.9, sepUnit=M, diffAge=, diffStation=)>
+Latitude: 43.13635, Longitude: 6.012045
+Trame brute : b'$GPVTG,271.2,T,269.9,M,0.0,N,0.0,K,D*24\r\n'
+Trame décodée : <NMEA(GPVTG, cogt=271.2, cogtUnit=T, cogm=269.9, cogmUnit=M, sogn=0.0, sognUnit=N, sogk=0.0, sogkUnit=K, posMode=D)>
+Erreur de lecture ou de parsing : 'NMEAMessage' object has no attribute 'spd_over_grnd_kmph'
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$WIMDA,30.0763,I,1.0185,B,18.7,C,,,,,,,,,,,,,,*32\r\n'
+Trame décodée : <NMEA(WIMDA, NOMINAL, field_01=30.0763, field_02=I, field_03=1.0185, field_04=B, field_05=18.7, field_06=C, field_07=, field_08=, field_09=, field_10=, field_11=, field_12=, field_13=, field_14=, field_15=, field_16=, field_17=, field_18=, field_19=, field_20=)>
+Trame brute : b'$GPZDA,145719.70,24,01,2025,00,00*6C\r\n'
+Trame décodée : <NMEA(GPZDA, time=14:57:19.700000, day=24, month=1, year=2025, ltzh=00, ltzn=00)>
+Trame brute : b'$WIMWV,,T,,,V*7C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=, reference=T, speed=, speedu=, status=V)>
+Trame brute : b'$WIMWD,,,,,,,,*40\r\n'
+Trame décodée : <NMEA(WIMWD, dirT=, dirTu=, dirM=, dirMu=, speedN=, speedNu=, speedM=, speedMu=)>
+Trame brute : b'$WIMWV,111.6,R,0.8,N,A*2C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=111.6, reference=R, speed=0.8, speedu=N, status=A)>
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$GPGGA,145720.20,4308.1810,N,00600.7227,E,2,7,1.7,67.0,M,47.9,M,,*63\r\n'
+Trame décodée : <NMEA(GPGGA, time=14:57:20.200000, lat=43.13635, NS=N, lon=6.012045, EW=E, quality=2, numSV=7, HDOP=1.7, alt=67.0, altUnit=M, sep=47.9, sepUnit=M, diffAge=, diffStation=)>
+Latitude: 43.13635, Longitude: 6.012045
+Trame brute : b'$GPVTG,271.2,T,269.9,M,0.0,N,0.0,K,D*24\r\n'
+Trame décodée : <NMEA(GPVTG, cogt=271.2, cogtUnit=T, cogm=269.9, cogmUnit=M, sogn=0.0, sognUnit=N, sogk=0.0, sogkUnit=K, posMode=D)>
+Erreur de lecture ou de parsing : 'NMEAMessage' object has no attribute 'spd_over_grnd_kmph'
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$WIMDA,30.0733,I,1.0184,B,18.8,C,,,,,,,,,,,,,,*39\r\n'
+Trame décodée : <NMEA(WIMDA, NOMINAL, field_01=30.0733, field_02=I, field_03=1.0184, field_04=B, field_05=18.8, field_06=C, field_07=, field_08=, field_09=, field_10=, field_11=, field_12=, field_13=, field_14=, field_15=, field_16=, field_17=, field_18=, field_19=, field_20=)>
+Trame brute : b'$GPZDA,145720.70,24,01,2025,00,00*66\r\n'
+Trame décodée : <NMEA(GPZDA, time=14:57:20.700000, day=24, month=1, year=2025, ltzh=00, ltzn=00)>
+Trame brute : b'$WIMWV,,T,,,V*7C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=, reference=T, speed=, speedu=, status=V)>
+Trame brute : b'$WIMWD,,,,,,,,*40\r\n'
+Trame décodée : <NMEA(WIMWD, dirT=, dirTu=, dirM=, dirMu=, speedN=, speedNu=, speedM=, speedMu=)>
+Trame brute : b'$WIMWV,91.0,R,0.3,N,A*18\r\n'
+Trame décodée : <NMEA(WIMWV, angle=91.0, reference=R, speed=0.3, speedu=N, status=A)>
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$GPGGA,145721.20,4308.1810,N,00600.7227,E,2,7,1.7,67.0,M,47.9,M,,*62\r\n'
+Trame décodée : <NMEA(GPGGA, time=14:57:21.200000, lat=43.13635, NS=N, lon=6.012045, EW=E, quality=2, numSV=7, HDOP=1.7, alt=67.0, altUnit=M, sep=47.9, sepUnit=M, diffAge=, diffStation=)>
+Latitude: 43.13635, Longitude: 6.012045
+Trame brute : b'$GPVTG,271.2,T,269.9,M,0.0,N,0.0,K,D*24\r\n'
+Trame décodée : <NMEA(GPVTG, cogt=271.2, cogtUnit=T, cogm=269.9, cogmUnit=M, sogn=0.0, sognUnit=N, sogk=0.0, sogkUnit=K, posMode=D)>
+Erreur de lecture ou de parsing : 'NMEAMessage' object has no attribute 'spd_over_grnd_kmph'
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$WIMDA,30.0733,I,1.0184,B,18.8,C,,,,,,,,,,,,,,*39\r\n'
+Trame décodée : <NMEA(WIMDA, NOMINAL, field_01=30.0733, field_02=I, field_03=1.0184, field_04=B, field_05=18.8, field_06=C, field_07=, field_08=, field_09=, field_10=, field_11=, field_12=, field_13=, field_14=, field_15=, field_16=, field_17=, field_18=, field_19=, field_20=)>
+Trame brute : b'$GPZDA,145721.70,24,01,2025,00,00*67\r\n'
+Trame décodée : <NMEA(GPZDA, time=14:57:21.700000, day=24, month=1, year=2025, ltzh=00, ltzn=00)>
+Trame brute : b'$WIMWV,,T,,,V*7C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=, reference=T, speed=, speedu=, status=V)>
+Trame brute : b'$WIMWD,,,,,,,,*40\r\n'
+Trame décodée : <NMEA(WIMWD, dirT=, dirTu=, dirM=, dirMu=, speedN=, speedNu=, speedM=, speedMu=)>
+Trame brute : b'$WIMWV,0.9,R,0.0,N,A*2A\r\n'
+Trame décodée : <NMEA(WIMWV, angle=0.9, reference=R, speed=0.0, speedu=N, status=A)>
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$GPGGA,145722.20,4308.1810,N,00600.7227,E,2,7,1.7,66.9,M,47.9,M,,*69\r\n'
+Trame décodée : <NMEA(GPGGA, time=14:57:22.200000, lat=43.13635, NS=N, lon=6.012045, EW=E, quality=2, numSV=7, HDOP=1.7, alt=66.9, altUnit=M, sep=47.9, sepUnit=M, diffAge=, diffStation=)>
+Latitude: 43.13635, Longitude: 6.012045
+Trame brute : b'$GPVTG,271.2,T,269.9,M,0.0,N,0.0,K,D*24\r\n'
+Trame décodée : <NMEA(GPVTG, cogt=271.2, cogtUnit=T, cogm=269.9, cogmUnit=M, sogn=0.0, sognUnit=N, sogk=0.0, sogkUnit=K, posMode=D)>
+Erreur de lecture ou de parsing : 'NMEAMessage' object has no attribute 'spd_over_grnd_kmph'
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$WIMDA,30.0733,I,1.0184,B,18.9,C,,,,,,,,,,,,,,*38\r\n'
+Trame décodée : <NMEA(WIMDA, NOMINAL, field_01=30.0733, field_02=I, field_03=1.0184, field_04=B, field_05=18.9, field_06=C, field_07=, field_08=, field_09=, field_10=, field_11=, field_12=, field_13=, field_14=, field_15=, field_16=, field_17=, field_18=, field_19=, field_20=)>
+Trame brute : b'$GPZDA,145722.70,24,01,2025,00,00*64\r\n'
+Trame décodée : <NMEA(GPZDA, time=14:57:22.700000, day=24, month=1, year=2025, ltzh=00, ltzn=00)>
+Trame brute : b'$WIMWV,,T,,,V*7C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=, reference=T, speed=, speedu=, status=V)>
+Trame brute : b'$WIMWD,,,,,,,,*40\r\n'
+Trame décodée : <NMEA(WIMWD, dirT=, dirTu=, dirM=, dirMu=, speedN=, speedNu=, speedM=, speedMu=)>
+Trame brute : b'$WIMWV,271.1,R,0.2,N,A*24\r\n'
+Trame décodée : <NMEA(WIMWV, angle=271.1, reference=R, speed=0.2, speedu=N, status=A)>
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$GPGGA,145723.20,4308.1809,N,00600.7226,E,2,7,1.7,66.8,M,47.9,M,,*60\r\n'
+Trame décodée : <NMEA(GPGGA, time=14:57:23.200000, lat=43.1363483333, NS=N, lon=6.0120433333, EW=E, quality=2, numSV=7, HDOP=1.7, alt=66.8, altUnit=M, sep=47.9, sepUnit=M, diffAge=, diffStation=)>
+Latitude: 43.1363483333, Longitude: 6.0120433333
+Trame brute : b'$GPVTG,271.2,T,269.9,M,0.0,N,0.0,K,D*24\r\n'
+Trame décodée : <NMEA(GPVTG, cogt=271.2, cogtUnit=T, cogm=269.9, cogmUnit=M, sogn=0.0, sognUnit=N, sogk=0.0, sogkUnit=K, posMode=D)>
+Erreur de lecture ou de parsing : 'NMEAMessage' object has no attribute 'spd_over_grnd_kmph'
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$WIMDA,30.0704,I,1.0183,B,18.9,C,,,,,,,,,,,,,,*3B\r\n'
+Trame décodée : <NMEA(WIMDA, NOMINAL, field_01=30.0704, field_02=I, field_03=1.0183, field_04=B, field_05=18.9, field_06=C, field_07=, field_08=, field_09=, field_10=, field_11=, field_12=, field_13=, field_14=, field_15=, field_16=, field_17=, field_18=, field_19=, field_20=)>
+Trame brute : b'$GPZDA,145723.70,24,01,2025,00,00*65\r\n'
+Trame décodée : <NMEA(GPZDA, time=14:57:23.700000, day=24, month=1, year=2025, ltzh=00, ltzn=00)>
+Trame brute : b'$WIMWV,,T,,,V*7C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=, reference=T, speed=, speedu=, status=V)>
+Trame brute : b'$WIMWD,,,,,,,,*40\r\n'
+Trame décodée : <NMEA(WIMWD, dirT=, dirTu=, dirM=, dirMu=, speedN=, speedNu=, speedM=, speedMu=)>
+Trame brute : b'$WIMWV,91.0,R,0.3,N,A*18\r\n'
+Trame décodée : <NMEA(WIMWV, angle=91.0, reference=R, speed=0.3, speedu=N, status=A)>
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$GPGGA,145724.20,4308.1809,N,00600.7226,E,2,7,1.7,66.7,M,47.9,M,,*68\r\n'
+Trame décodée : <NMEA(GPGGA, time=14:57:24.200000, lat=43.1363483333, NS=N, lon=6.0120433333, EW=E, quality=2, numSV=7, HDOP=1.7, alt=66.7, altUnit=M, sep=47.9, sepUnit=M, diffAge=, diffStation=)>
+Latitude: 43.1363483333, Longitude: 6.0120433333
+Trame brute : b'$GPVTG,271.2,T,269.9,M,0.0,N,0.0,K,D*24\r\n'
+Trame décodée : <NMEA(GPVTG, cogt=271.2, cogtUnit=T, cogm=269.9, cogmUnit=M, sogn=0.0, sognUnit=N, sogk=0.0, sogkUnit=K, posMode=D)>
+Erreur de lecture ou de parsing : 'NMEAMessage' object has no attribute 'spd_over_grnd_kmph'
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$WIMDA,30.0704,I,1.0183,B,18.9,C,,,,,,,,,,,,,,*3B\r\n'
+Trame décodée : <NMEA(WIMDA, NOMINAL, field_01=30.0704, field_02=I, field_03=1.0183, field_04=B, field_05=18.9, field_06=C, field_07=, field_08=, field_09=, field_10=, field_11=, field_12=, field_13=, field_14=, field_15=, field_16=, field_17=, field_18=, field_19=, field_20=)>
+Trame brute : b'$GPZDA,145724.70,24,01,2025,00,00*62\r\n'
+Trame décodée : <NMEA(GPZDA, time=14:57:24.700000, day=24, month=1, year=2025, ltzh=00, ltzn=00)>
+Trame brute : b'$WIMWV,,T,,,V*7C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=, reference=T, speed=, speedu=, status=V)>
+Trame brute : b'$WIMWD,,,,,,,,*40\r\n'
+Trame décodée : <NMEA(WIMWD, dirT=, dirTu=, dirM=, dirMu=, speedN=, speedNu=, speedM=, speedMu=)>
+Trame brute : b'$WIMWV,181.2,R,0.3,N,A*2A\r\n'
+Trame décodée : <NMEA(WIMWV, angle=181.2, reference=R, speed=0.3, speedu=N, status=A)>
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$GPGGA,145725.20,4308.1809,N,00600.7225,E,2,7,1.7,66.7,M,47.9,M,,*6A\r\n'
+Trame décodée : <NMEA(GPGGA, time=14:57:25.200000, lat=43.1363483333, NS=N, lon=6.0120416667, EW=E, quality=2, numSV=7, HDOP=1.7, alt=66.7, altUnit=M, sep=47.9, sepUnit=M, diffAge=, diffStation=)>
+Latitude: 43.1363483333, Longitude: 6.0120416667
+Trame brute : b'$GPVTG,271.2,T,269.9,M,0.0,N,0.0,K,D*24\r\n'
+Trame décodée : <NMEA(GPVTG, cogt=271.2, cogtUnit=T, cogm=269.9, cogmUnit=M, sogn=0.0, sognUnit=N, sogk=0.0, sogkUnit=K, posMode=D)>
+Erreur de lecture ou de parsing : 'NMEAMessage' object has no attribute 'spd_over_grnd_kmph'
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$WIMDA,30.0733,I,1.0184,B,18.8,C,,,,,,,,,,,,,,*39\r\n'
+Trame décodée : <NMEA(WIMDA, NOMINAL, field_01=30.0733, field_02=I, field_03=1.0184, field_04=B, field_05=18.8, field_06=C, field_07=, field_08=, field_09=, field_10=, field_11=, field_12=, field_13=, field_14=, field_15=, field_16=, field_17=, field_18=, field_19=, field_20=)>
+Trame brute : b'$GPZDA,145725.70,24,01,2025,00,00*63\r\n'
+Trame décodée : <NMEA(GPZDA, time=14:57:25.700000, day=24, month=1, year=2025, ltzh=00, ltzn=00)>
+Trame brute : b'$WIMWV,,T,,,V*7C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=, reference=T, speed=, speedu=, status=V)>
+Trame brute : b'$WIMWD,,,,,,,,*40\r\n'
+Trame décodée : <NMEA(WIMWD, dirT=, dirTu=, dirM=, dirMu=, speedN=, speedNu=, speedM=, speedMu=)>
+Trame brute : b'$WIMWV,271.1,R,0.2,N,A*24\r\n'
+Trame décodée : <NMEA(WIMWV, angle=271.1, reference=R, speed=0.2, speedu=N, status=A)>
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$GPGGA,145726.20,4308.1809,N,00600.7225,E,2,7,4.8,66.4,M,47.9,M,,*60\r\n'
+Trame décodée : <NMEA(GPGGA, time=14:57:26.200000, lat=43.1363483333, NS=N, lon=6.0120416667, EW=E, quality=2, numSV=7, HDOP=4.8, alt=66.4, altUnit=M, sep=47.9, sepUnit=M, diffAge=, diffStation=)>
+Latitude: 43.1363483333, Longitude: 6.0120416667
+Trame brute : b'$GPVTG,271.2,T,269.9,M,0.0,N,0.0,K,D*24\r\n'
+Trame décodée : <NMEA(GPVTG, cogt=271.2, cogtUnit=T, cogm=269.9, cogmUnit=M, sogn=0.0, sognUnit=N, sogk=0.0, sogkUnit=K, posMode=D)>
+Erreur de lecture ou de parsing : 'NMEAMessage' object has no attribute 'spd_over_grnd_kmph'
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$WIMDA,30.0674,I,1.0182,B,18.8,C,,,,,,,,,,,,,,*3D\r\n'
+Trame décodée : <NMEA(WIMDA, NOMINAL, field_01=30.0674, field_02=I, field_03=1.0182, field_04=B, field_05=18.8, field_06=C, field_07=, field_08=, field_09=, field_10=, field_11=, field_12=, field_13=, field_14=, field_15=, field_16=, field_17=, field_18=, field_19=, field_20=)>
+Trame brute : b'$GPZDA,145726.70,24,01,2025,00,00*60\r\n'
+Trame décodée : <NMEA(GPZDA, time=14:57:26.700000, day=24, month=1, year=2025, ltzh=00, ltzn=00)>
+Trame brute : b'$WIMWV,,T,,,V*7C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=, reference=T, speed=, speedu=, status=V)>
+Trame brute : b'$WIMWD,,,,,,,,*40\r\n'
+Trame décodée : <NMEA(WIMWD, dirT=, dirTu=, dirM=, dirMu=, speedN=, speedNu=, speedM=, speedMu=)>
+Trame brute : b'$WIMWV,0.9,R,0.4,N,A*2E\r\n'
+Trame décodée : <NMEA(WIMWV, angle=0.9, reference=R, speed=0.4, speedu=N, status=A)>
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$GPGGA,145727.10,4308.1809,N,00600.7225,E,1,6,11.9,66.3,M,47.9,M,,*52\r\n'
+Trame décodée : <NMEA(GPGGA, time=14:57:27.100000, lat=43.1363483333, NS=N, lon=6.0120416667, EW=E, quality=1, numSV=6, HDOP=11.9, alt=66.3, altUnit=M, sep=47.9, sepUnit=M, diffAge=, diffStation=)>
+Latitude: 43.1363483333, Longitude: 6.0120416667
+Trame brute : b'$GPVTG,271.2,T,269.9,M,0.0,N,0.0,K,A*21\r\n'
+Trame décodée : <NMEA(GPVTG, cogt=271.2, cogtUnit=T, cogm=269.9, cogmUnit=M, sogn=0.0, sognUnit=N, sogk=0.0, sogkUnit=K, posMode=A)>
+Erreur de lecture ou de parsing : 'NMEAMessage' object has no attribute 'spd_over_grnd_kmph'
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$WIMDA,30.0733,I,1.0184,B,18.8,C,,,,,,,,,,,,,,*39\r\n'
+Trame décodée : <NMEA(WIMDA, NOMINAL, field_01=30.0733, field_02=I, field_03=1.0184, field_04=B, field_05=18.8, field_06=C, field_07=, field_08=, field_09=, field_10=, field_11=, field_12=, field_13=, field_14=, field_15=, field_16=, field_17=, field_18=, field_19=, field_20=)>
+Trame brute : b'$GPZDA,145727.70,24,01,2025,00,00*61\r\n'
+Trame décodée : <NMEA(GPZDA, time=14:57:27.700000, day=24, month=1, year=2025, ltzh=00, ltzn=00)>
+Trame brute : b'$WIMWV,,T,,,V*7C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=, reference=T, speed=, speedu=, status=V)>
+Trame brute : b'$WIMWD,,,,,,,,*40\r\n'
+Trame décodée : <NMEA(WIMWD, dirT=, dirTu=, dirM=, dirMu=, speedN=, speedNu=, speedM=, speedMu=)>
+Trame brute : b'$WIMWV,52.4,R,0.3,N,A*13\r\n'
+Trame décodée : <NMEA(WIMWV, angle=52.4, reference=R, speed=0.3, speedu=N, status=A)>
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$GPGGA,145728.30,4308.1809,N,00600.7225,E,1,4,11.9,66.3,M,47.9,M,,*5D\r\n'
+Trame décodée : <NMEA(GPGGA, time=14:57:28.300000, lat=43.1363483333, NS=N, lon=6.0120416667, EW=E, quality=1, numSV=4, HDOP=11.9, alt=66.3, altUnit=M, sep=47.9, sepUnit=M, diffAge=, diffStation=)>
+Latitude: 43.1363483333, Longitude: 6.0120416667
+Trame brute : b'$GPVTG,271.2,T,269.9,M,0.0,N,0.0,K,A*21\r\n'
+Trame décodée : <NMEA(GPVTG, cogt=271.2, cogtUnit=T, cogm=269.9, cogmUnit=M, sogn=0.0, sognUnit=N, sogk=0.0, sogkUnit=K, posMode=A)>
+Erreur de lecture ou de parsing : 'NMEAMessage' object has no attribute 'spd_over_grnd_kmph'
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$WIMDA,30.0733,I,1.0184,B,18.9,C,,,,,,,,,,,,,,*38\r\n'
+Trame décodée : <NMEA(WIMDA, NOMINAL, field_01=30.0733, field_02=I, field_03=1.0184, field_04=B, field_05=18.9, field_06=C, field_07=, field_08=, field_09=, field_10=, field_11=, field_12=, field_13=, field_14=, field_15=, field_16=, field_17=, field_18=, field_19=, field_20=)>
+Trame brute : b'$GPZDA,145728.70,24,01,2025,00,00*6E\r\n'
+Trame décodée : <NMEA(GPZDA, time=14:57:28.700000, day=24, month=1, year=2025, ltzh=00, ltzn=00)>
+Trame brute : b'$WIMWV,,T,,,V*7C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=, reference=T, speed=, speedu=, status=V)>
+Trame brute : b'$WIMWD,,,,,,,,*40\r\n'
+Trame décodée : <NMEA(WIMWD, dirT=, dirTu=, dirM=, dirMu=, speedN=, speedNu=, speedM=, speedMu=)>
+Trame brute : b'$WIMWV,56.3,R,0.4,N,A*17\r\n'
+Trame décodée : <NMEA(WIMWV, angle=56.3, reference=R, speed=0.4, speedu=N, status=A)>
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$GPGGA,145729.20,4308.1809,N,00600.7225,E,1,5,3.4,66.3,M,47.9,M,,*62\r\n'
+Trame décodée : <NMEA(GPGGA, time=14:57:29.200000, lat=43.1363483333, NS=N, lon=6.0120416667, EW=E, quality=1, numSV=5, HDOP=3.4, alt=66.3, altUnit=M, sep=47.9, sepUnit=M, diffAge=, diffStation=)>
+Latitude: 43.1363483333, Longitude: 6.0120416667
+Trame brute : b'$GPVTG,271.2,T,269.9,M,0.0,N,0.0,K,A*21\r\n'
+Trame décodée : <NMEA(GPVTG, cogt=271.2, cogtUnit=T, cogm=269.9, cogmUnit=M, sogn=0.0, sognUnit=N, sogk=0.0, sogkUnit=K, posMode=A)>
+Erreur de lecture ou de parsing : 'NMEAMessage' object has no attribute 'spd_over_grnd_kmph'
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$WIMDA,30.0733,I,1.0184,B,18.8,C,,,,,,,,,,,,,,*39\r\n'
+Trame décodée : <NMEA(WIMDA, NOMINAL, field_01=30.0733, field_02=I, field_03=1.0184, field_04=B, field_05=18.8, field_06=C, field_07=, field_08=, field_09=, field_10=, field_11=, field_12=, field_13=, field_14=, field_15=, field_16=, field_17=, field_18=, field_19=, field_20=)>
+Trame brute : b'$GPZDA,145729.70,24,01,2025,00,00*6F\r\n'
+Trame décodée : <NMEA(GPZDA, time=14:57:29.700000, day=24, month=1, year=2025, ltzh=00, ltzn=00)>
+Trame brute : b'$WIMWV,,T,,,V*7C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=, reference=T, speed=, speedu=, status=V)>
+Trame brute : b'$WIMWD,,,,,,,,*40\r\n'
+Trame décodée : <NMEA(WIMWD, dirT=, dirTu=, dirM=, dirMu=, speedN=, speedNu=, speedM=, speedMu=)>
+Trame brute : b'$WIMWV,0.9,R,0.3,N,A*29\r\n'
+Trame décodée : <NMEA(WIMWV, angle=0.9, reference=R, speed=0.3, speedu=N, status=A)>
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$GPGGA,145730.20,4308.1809,N,00600.7225,E,1,5,3.4,66.4,M,47.9,M,,*6D\r\n'
+Trame décodée : <NMEA(GPGGA, time=14:57:30.200000, lat=43.1363483333, NS=N, lon=6.0120416667, EW=E, quality=1, numSV=5, HDOP=3.4, alt=66.4, altUnit=M, sep=47.9, sepUnit=M, diffAge=, diffStation=)>
+Latitude: 43.1363483333, Longitude: 6.0120416667
+Trame brute : b'$GPVTG,271.2,T,269.9,M,0.0,N,0.0,K,A*21\r\n'
+Trame décodée : <NMEA(GPVTG, cogt=271.2, cogtUnit=T, cogm=269.9, cogmUnit=M, sogn=0.0, sognUnit=N, sogk=0.0, sogkUnit=K, posMode=A)>
+Erreur de lecture ou de parsing : 'NMEAMessage' object has no attribute 'spd_over_grnd_kmph'
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$WIMDA,30.0733,I,1.0184,B,18.8,C,,,,,,,,,,,,,,*39\r\n'
+Trame décodée : <NMEA(WIMDA, NOMINAL, field_01=30.0733, field_02=I, field_03=1.0184, field_04=B, field_05=18.8, field_06=C, field_07=, field_08=, field_09=, field_10=, field_11=, field_12=, field_13=, field_14=, field_15=, field_16=, field_17=, field_18=, field_19=, field_20=)>
+Trame brute : b'$GPZDA,145730.70,24,01,2025,00,00*67\r\n'
+Trame décodée : <NMEA(GPZDA, time=14:57:30.700000, day=24, month=1, year=2025, ltzh=00, ltzn=00)>
+Trame brute : b'$WIMWV,,T,,,V*7C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=, reference=T, speed=, speedu=, status=V)>
+Trame brute : b'$WIMWD,,,,,,,,*40\r\n'
+Trame décodée : <NMEA(WIMWD, dirT=, dirTu=, dirM=, dirMu=, speedN=, speedNu=, speedM=, speedMu=)>
+Trame brute : b'$WIMWV,302.5,R,0.4,N,A*23\r\n'
+Trame décodée : <NMEA(WIMWV, angle=302.5, reference=R, speed=0.4, speedu=N, status=A)>
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$GPGGA,145731.20,4308.1809,N,00600.7225,E,1,5,3.4,66.4,M,47.9,M,,*6C\r\n'
+Trame décodée : <NMEA(GPGGA, time=14:57:31.200000, lat=43.1363483333, NS=N, lon=6.0120416667, EW=E, quality=1, numSV=5, HDOP=3.4, alt=66.4, altUnit=M, sep=47.9, sepUnit=M, diffAge=, diffStation=)>
+Latitude: 43.1363483333, Longitude: 6.0120416667
+Trame brute : b'$GPVTG,271.2,T,269.9,M,0.0,N,0.0,K,A*21\r\n'
+Trame décodée : <NMEA(GPVTG, cogt=271.2, cogtUnit=T, cogm=269.9, cogmUnit=M, sogn=0.0, sognUnit=N, sogk=0.0, sogkUnit=K, posMode=A)>
+Erreur de lecture ou de parsing : 'NMEAMessage' object has no attribute 'spd_over_grnd_kmph'
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$WIMDA,30.0733,I,1.0184,B,18.8,C,,,,,,,,,,,,,,*39\r\n'
+Trame décodée : <NMEA(WIMDA, NOMINAL, field_01=30.0733, field_02=I, field_03=1.0184, field_04=B, field_05=18.8, field_06=C, field_07=, field_08=, field_09=, field_10=, field_11=, field_12=, field_13=, field_14=, field_15=, field_16=, field_17=, field_18=, field_19=, field_20=)>
+Trame brute : b'$GPZDA,145731.70,24,01,2025,00,00*66\r\n'
+Trame décodée : <NMEA(GPZDA, time=14:57:31.700000, day=24, month=1, year=2025, ltzh=00, ltzn=00)>
+Trame brute : b'$WIMWV,,T,,,V*7C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=, reference=T, speed=, speedu=, status=V)>
+Trame brute : b'$WIMWD,,,,,,,,*40\r\n'
+Trame décodée : <NMEA(WIMWD, dirT=, dirTu=, dirM=, dirMu=, speedN=, speedNu=, speedM=, speedMu=)>
+Trame brute : b'$WIMWV,271.1,R,0.3,N,A*25\r\n'
+Trame décodée : <NMEA(WIMWV, angle=271.1, reference=R, speed=0.3, speedu=N, status=A)>
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$GPGGA,145732.20,4308.1809,N,00600.7225,E,1,5,3.4,66.4,M,47.9,M,,*6F\r\n'
+Trame décodée : <NMEA(GPGGA, time=14:57:32.200000, lat=43.1363483333, NS=N, lon=6.0120416667, EW=E, quality=1, numSV=5, HDOP=3.4, alt=66.4, altUnit=M, sep=47.9, sepUnit=M, diffAge=, diffStation=)>
+Latitude: 43.1363483333, Longitude: 6.0120416667
+Trame brute : b'$GPVTG,271.2,T,269.9,M,0.0,N,0.0,K,A*21\r\n'
+Trame décodée : <NMEA(GPVTG, cogt=271.2, cogtUnit=T, cogm=269.9, cogmUnit=M, sogn=0.0, sognUnit=N, sogk=0.0, sogkUnit=K, posMode=A)>
+Erreur de lecture ou de parsing : 'NMEAMessage' object has no attribute 'spd_over_grnd_kmph'
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$WIMDA,30.0733,I,1.0184,B,18.8,C,,,,,,,,,,,,,,*39\r\n'
+Trame décodée : <NMEA(WIMDA, NOMINAL, field_01=30.0733, field_02=I, field_03=1.0184, field_04=B, field_05=18.8, field_06=C, field_07=, field_08=, field_09=, field_10=, field_11=, field_12=, field_13=, field_14=, field_15=, field_16=, field_17=, field_18=, field_19=, field_20=)>
+Trame brute : b'$GPZDA,145732.70,24,01,2025,00,00*65\r\n'
+Trame décodée : <NMEA(GPZDA, time=14:57:32.700000, day=24, month=1, year=2025, ltzh=00, ltzn=00)>
+Trame brute : b'$WIMWV,,T,,,V*7C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=, reference=T, speed=, speedu=, status=V)>
+Trame brute : b'$WIMWD,,,,,,,,*40\r\n'
+Trame décodée : <NMEA(WIMWD, dirT=, dirTu=, dirM=, dirMu=, speedN=, speedNu=, speedM=, speedMu=)>
+Trame brute : b'$WIMWV,321.9,R,0.2,N,A*28\r\n'
+Trame décodée : <NMEA(WIMWV, angle=321.9, reference=R, speed=0.2, speedu=N, status=A)>
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$GPGGA,145733.20,4308.1809,N,00600.7225,E,1,5,3.4,66.4,M,47.9,M,,*6E\r\n'
+Trame décodée : <NMEA(GPGGA, time=14:57:33.200000, lat=43.1363483333, NS=N, lon=6.0120416667, EW=E, quality=1, numSV=5, HDOP=3.4, alt=66.4, altUnit=M, sep=47.9, sepUnit=M, diffAge=, diffStation=)>
+Latitude: 43.1363483333, Longitude: 6.0120416667
+Trame brute : b'$GPVTG,271.2,T,269.9,M,0.0,N,0.0,K,A*21\r\n'
+Trame décodée : <NMEA(GPVTG, cogt=271.2, cogtUnit=T, cogm=269.9, cogmUnit=M, sogn=0.0, sognUnit=N, sogk=0.0, sogkUnit=K, posMode=A)>
+Erreur de lecture ou de parsing : 'NMEAMessage' object has no attribute 'spd_over_grnd_kmph'
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$WIMDA,30.0763,I,1.0185,B,18.9,C,,,,,,,,,,,,,,*3C\r\n'
+Trame décodée : <NMEA(WIMDA, NOMINAL, field_01=30.0763, field_02=I, field_03=1.0185, field_04=B, field_05=18.9, field_06=C, field_07=, field_08=, field_09=, field_10=, field_11=, field_12=, field_13=, field_14=, field_15=, field_16=, field_17=, field_18=, field_19=, field_20=)>
+Trame brute : b'$GPZDA,145733.70,24,01,2025,00,00*64\r\n'
+Trame décodée : <NMEA(GPZDA, time=14:57:33.700000, day=24, month=1, year=2025, ltzh=00, ltzn=00)>
+Trame brute : b'$WIMWV,,T,,,V*7C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=, reference=T, speed=, speedu=, status=V)>
+Trame brute : b'$WIMWD,,,,,,,,*40\r\n'
+Trame décodée : <NMEA(WIMWD, dirT=, dirTu=, dirM=, dirMu=, speedN=, speedNu=, speedM=, speedMu=)>
+Trame brute : b'$WIMWV,0.9,R,0.0,N,A*2A\r\n'
+Trame décodée : <NMEA(WIMWV, angle=0.9, reference=R, speed=0.0, speedu=N, status=A)>
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$GPGGA,145734.10,4308.1809,N,00600.7225,E,1,5,3.4,66.4,M,47.9,M,,*6A\r\n'
+Trame décodée : <NMEA(GPGGA, time=14:57:34.100000, lat=43.1363483333, NS=N, lon=6.0120416667, EW=E, quality=1, numSV=5, HDOP=3.4, alt=66.4, altUnit=M, sep=47.9, sepUnit=M, diffAge=, diffStation=)>
+Latitude: 43.1363483333, Longitude: 6.0120416667
+Trame brute : b'$GPVTG,271.2,T,269.9,M,0.0,N,0.0,K,A*21\r\n'
+Trame décodée : <NMEA(GPVTG, cogt=271.2, cogtUnit=T, cogm=269.9, cogmUnit=M, sogn=0.0, sognUnit=N, sogk=0.0, sogkUnit=K, posMode=A)>
+Erreur de lecture ou de parsing : 'NMEAMessage' object has no attribute 'spd_over_grnd_kmph'
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$WIMDA,30.0733,I,1.0184,B,18.8,C,,,,,,,,,,,,,,*39\r\n'
+Trame décodée : <NMEA(WIMDA, NOMINAL, field_01=30.0733, field_02=I, field_03=1.0184, field_04=B, field_05=18.8, field_06=C, field_07=, field_08=, field_09=, field_10=, field_11=, field_12=, field_13=, field_14=, field_15=, field_16=, field_17=, field_18=, field_19=, field_20=)>
+Trame brute : b'$GPZDA,145734.70,24,01,2025,00,00*63\r\n'
+Trame décodée : <NMEA(GPZDA, time=14:57:34.700000, day=24, month=1, year=2025, ltzh=00, ltzn=00)>
+Trame brute : b'$WIMWV,,T,,,V*7C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=, reference=T, speed=, speedu=, status=V)>
+Trame brute : b'$WIMWD,,,,,,,,*40\r\n'
+Trame décodée : <NMEA(WIMWD, dirT=, dirTu=, dirM=, dirMu=, speedN=, speedNu=, speedM=, speedMu=)>
+Trame brute : b'$WIMWV,34.9,R,0.4,N,A*19\r\n'
+Trame décodée : <NMEA(WIMWV, angle=34.9, reference=R, speed=0.4, speedu=N, status=A)>
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$GPGGA,145735.10,4308.1809,N,00600.7225,E,1,5,3.4,66.4,M,47.9,M,,*6B\r\n'
+Trame décodée : <NMEA(GPGGA, time=14:57:35.100000, lat=43.1363483333, NS=N, lon=6.0120416667, EW=E, quality=1, numSV=5, HDOP=3.4, alt=66.4, altUnit=M, sep=47.9, sepUnit=M, diffAge=, diffStation=)>
+Latitude: 43.1363483333, Longitude: 6.0120416667
+Trame brute : b'$GPVTG,271.2,T,269.9,M,0.0,N,0.0,K,A*21\r\n'
+Trame décodée : <NMEA(GPVTG, cogt=271.2, cogtUnit=T, cogm=269.9, cogmUnit=M, sogn=0.0, sognUnit=N, sogk=0.0, sogkUnit=K, posMode=A)>
+Erreur de lecture ou de parsing : 'NMEAMessage' object has no attribute 'spd_over_grnd_kmph'
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
+Trame brute : b'$WIMDA,30.0704,I,1.0183,B,18.8,C,,,,,,,,,,,,,,*3A\r\n'
+Trame décodée : <NMEA(WIMDA, NOMINAL, field_01=30.0704, field_02=I, field_03=1.0183, field_04=B, field_05=18.8, field_06=C, field_07=, field_08=, field_09=, field_10=, field_11=, field_12=, field_13=, field_14=, field_15=, field_16=, field_17=, field_18=, field_19=, field_20=)>
+Trame brute : b'$GPZDA,145735.70,24,01,2025,00,00*62\r\n'
+Trame décodée : <NMEA(GPZDA, time=14:57:35.700000, day=24, month=1, year=2025, ltzh=00, ltzn=00)>
+Trame brute : b'$WIMWV,,T,,,V*7C\r\n'
+Trame décodée : <NMEA(WIMWV, angle=, reference=T, speed=, speedu=, status=V)>
+Trame brute : b'$WIMWD,,,,,,,,*40\r\n'
+Trame décodée : <NMEA(WIMWD, dirT=, dirTu=, dirM=, dirMu=, speedN=, speedNu=, speedM=, speedMu=)>
+Trame brute : b'$WIMWV,271.1,R,0.3,N,A*25\r\n'
+Trame décodée : <NMEA(WIMWV, angle=271.1, reference=R, speed=0.3, speedu=N, status=A)>
+Trame brute : b'$HCHDG,,,,1.3,E*05\r\n'
+Trame décodée : <NMEA(HCHDG, headingM=, deviation=, deviationEW=, variation=1.3, variationEW=E)>
+Trame brute : b'$HCHDT,,*53\r\n'
+Trame décodée : <NMEA(HCHDT, headingT=, headingTu=)>
