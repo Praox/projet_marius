@@ -4,8 +4,8 @@ import time
 
 # Configuration
 IP_BATEAU = "192.168.254.102"  # IP du bateau
-PORT_UDP = 12345  # Port UDP pour envoyer les données
-PORT_TCP = 54321  # Port TCP pour recevoir les commandes
+PORT_UDP = 54325   # Port UDP pour envoyer les données
+PORT_TCP = 54322  # Port TCP pour recevoir les commandes
 
 # Création du socket UDP
 udp_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -21,7 +21,7 @@ def envoyer_telemetrie():
         message = "Vitesse: 50 km/h, Altitude: 100m"  # Exemple de télémétrie
         udp_sock.sendto(message.encode(), (IP_BATEAU, PORT_UDP))
         print(f"📡 Données envoyées : {message}")
-        time.sleep(2)  # Envoi toutes les 2 secondes
+        time.sleep(5)  # Envoi toutes les 2 secondes
 
 # 📌 Fonction pour écouter les commandes TCP
 def recevoir_commandes():
