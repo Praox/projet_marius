@@ -2,8 +2,8 @@ import socket
 import json
 
 # Adresse IP d'écoute et le port
-LISTEN_IP = "0.0.0.0"  # L'ordinateur récepteur écoute sur toutes les interfaces réseau
-#LISTEN_IP = "192.168.254.115"  # L'ordinateur récepteur écoute sur toutes les interfaces réseau
+#LISTEN_IP = "0.0.0.0"  # L'ordinateur récepteur écoute sur toutes les interfaces réseau
+LISTEN_IP = "192.168.254.115"  # L'ordinateur récepteur écoute sur toutes les interfaces réseau
 #LISTEN_IP = "127.0.0.1"
 LISTEN_PORT = 14555
 
