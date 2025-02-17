@@ -13,7 +13,7 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 print("Émetteur UDP prêt à envoyer des messages.")
 try:
     while True:
-        message = "test"
+        message = input("Entrez un message à envoyer : ")
         sock.sendto(message.encode('utf_8'), ADDR)
         print("Message envoyé !")
 

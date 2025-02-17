@@ -32,7 +32,7 @@ def read_serial_with_pynmeagps(port, baudrate):
         print("\nArrêt de la lecture série.")
 
 # Configuration du port série
-PORT = 'COM4'  # Remplacez par le port série utilisé
+PORT = '/dev/ttyUSB0'  # Remplacez par le port série utilisé
 BAUDRATE = 4800  # Assurez-vous que cela correspond au périphérique
 
 # Démarrage de la lecture série
