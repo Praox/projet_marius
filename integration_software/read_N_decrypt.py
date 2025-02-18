@@ -8,7 +8,8 @@ import time
 
 # --- CONFIGURATION ---
 UDP_SERVER_IP = "127.0.0.1"  # Adresse du serveur UDP
-UDP_SERVER_PORT = 4000  # Port d'envoi des données
+UDP_SERVER_PORT_TRAJ = 4000  # Port d'envoi des données
+UDP_SERVER_PORT_NETWORK = 4001  # Port d'envoi des données
 PIXHAWK_PORT = "/dev/ttyACM0"
 BAUDRATE_PIXHAWK = 115200
 GPS_PORT = "/dev/ttyUSB0"
@@ -95,11 +96,12 @@ def send_udp_data():
     global latest_imu_data, latest_gps_data, stop_flag
 
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    print(f"📡 Envoi des données en UDP vers {UDP_SERVER_IP}:{UDP_SERVER_PORT}")
+    print(f"📡 Envoi des données en UDP vers {UDP_SERVER_IP}:{UDP_SERVER_PORT_TRAJ}")
 
     while not stop_flag:
         data = json.dumps({"imu": latest_imu_data, "gps": latest_gps_data})
-        sock.sendto(data.encode('utf-8'), (UDP_SERVER_IP, UDP_SERVER_PORT))
+        sock.sendto(data.encode('utf-8'), (UDP_SERVER_IP, UDP_SERVER_PORT_TRAJ))
+        sock.sendto(data.encode('utf-8'), (UDP_SERVER_IP, UDP_SERVER_PORT_NETWORK))
         print(f"📤 Données envoyées : {data}")
         time.sleep(1)
 

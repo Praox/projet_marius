@@ -4,7 +4,7 @@ import threading
 
 # --- CONFIGURATION ---
 UDP_LISTEN_IP = "0.0.0.0"  # Écoute sur toutes les interfaces
-UDP_LISTEN_PORT = 4000  # Port d'écoute UDP en local
+UDP_LISTEN_PORT = 4001  # Port d'écoute UDP en local
 BUFFER_SIZE = 1024  # Taille du buffer
 
 # Adresse de destination pour l'envoi des données
