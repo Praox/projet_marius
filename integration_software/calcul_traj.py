@@ -33,6 +33,7 @@ def udp_listener():
         try:
             data, addr = sock.recvfrom(BUFFER_SIZE)  # Réception des données
             decoded_data = data.decode('utf-8')  # Décodage en string
+            global latest_data  # Accéder à la variable globale
             latest_data = json.loads(decoded_data)  # Conversion en dictionnaire JSON
             
             print(f"📥 Données reçues de {addr}: {latest_data}")
@@ -72,35 +73,41 @@ def tcp_listener():
     serveur.close()
     print("Serveur TCP fermé.")
 
-
 def calcul_traj(latest_data):
     # Exemple de calculs
     latitude = latest_data["latitude"]
     longitude = latest_data["longitude"]
 
+    # Calcul simple de la différence entre la latitude et la longitude (comme exemple)
     cap = latitude - longitude
     return cap
 
 # --- FONCTION D'ENVOI UDP ---
-def udp_forwarder(data,cap):
-    cap = calcul_traj(data)
-    try:
-        send_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        send_sock.sendto(cap.encode('utf-8'), (UDP_SEND_IP, UDP_SEND_PORT_NETWORK))
-        print(f"{cap}")
-        print(f"📤 Données envoyées à {UDP_SEND_IP}:{UDP_SEND_PORT_NETWORK}")
-    except Exception as e:
-        print(f"❌ Erreur lors de l'envoi des données : {e}")
+def udp_forwarder():
+    """Envoie les données calculées en UDP sur le réseau."""
+    global latest_data
+    while not stop_flag:
+        if latest_data:  # Vérifie si les données sont disponibles
+            cap = calcul_traj(latest_data)  # Calcule la trajectoire (ou cap)
+            try:
+                send_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+                send_sock.sendto(str(cap).encode('utf-8'), (UDP_SEND_IP, UDP_SEND_PORT_NETWORK))  # Envoie les données calculées
+                print(f"📤 Données envoyées : {cap}")
+            except Exception as e:
+                print(f"❌ Erreur lors de l'envoi des données : {e}")
+        else:
+            print("⚠️ Pas de données à envoyer, attend les nouvelles données UDP.")
+        
+        # Pour éviter une boucle trop rapide, on peut ajouter un petit délai
+        threading.Event().wait(1)
 
-
-# --- LANCEMENT DU THREAD UDP ---
+# --- LANCEMENT DES THREADS UDP ---
 udp_thread = threading.Thread(target=udp_listener, daemon=True)
 tcp_thread = threading.Thread(target=tcp_listener, daemon=True)  # TCP tourne en arrière-plan
-udp_forwarder_thread = threading.Thread(target=udp_forwarder, daemon=True)
+udp_forwarder_thread = threading.Thread(target=udp_forwarder, daemon=True)  # Envoi des données calculées
 udp_thread.start()
 tcp_thread.start()
 udp_forwarder_thread.start()
-
 
 # Maintenir le script en vie
 try:
