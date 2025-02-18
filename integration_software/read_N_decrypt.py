@@ -97,6 +97,7 @@ def send_udp_data():
 
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     print(f"📡 Envoi des données en UDP vers {UDP_SERVER_IP}:{UDP_SERVER_PORT_TRAJ}")
+    print(f"📡 Envoi des données en UDP vers {UDP_SERVER_IP}:{UDP_SERVER_PORT_NETWORK}")
 
     while not stop_flag:
         data = json.dumps({"imu": latest_imu_data, "gps": latest_gps_data})

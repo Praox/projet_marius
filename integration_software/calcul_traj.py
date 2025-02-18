@@ -9,6 +9,9 @@ BUFFER_SIZE = 1024  # Taille du buffer
 # Adresse du serveur TCP
 TCP_IP = "192.168.254.120"
 TCP_PORT = 3000
+# Adresse Udp local
+UDP_SEND_IP = "127.0.0.1"  # Adresse du serveur UDP
+UDP_SEND_PORT_NETWORK = 4002  # Port d'envoi des données
 
 # Flag d'arrêt
 stop_flag = False
@@ -69,11 +72,34 @@ def tcp_listener():
     serveur.close()
     print("Serveur TCP fermé.")
 
+
+def calcul_traj(latest_data):
+    # Exemple de calculs
+    latitude = latest_data["latitude"]
+    longitude = latest_data["longitude"]
+
+    cap = latitude - longitude
+    return cap
+
+# --- FONCTION D'ENVOI UDP ---
+def udp_forwarder(data,cap):
+    cap = calcul_traj(data)
+    try:
+        send_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        send_sock.sendto(cap.encode('utf-8'), (UDP_SEND_IP, UDP_SEND_PORT_NETWORK))
+        print(f"{cap}")
+        print(f"📤 Données envoyées à {UDP_SEND_IP}:{UDP_SEND_PORT_NETWORK}")
+    except Exception as e:
+        print(f"❌ Erreur lors de l'envoi des données : {e}")
+
+
 # --- LANCEMENT DU THREAD UDP ---
 udp_thread = threading.Thread(target=udp_listener, daemon=True)
 tcp_thread = threading.Thread(target=tcp_listener, daemon=True)  # TCP tourne en arrière-plan
+udp_forwarder_thread = threading.Thread(target=udp_forwarder, daemon=True)
 udp_thread.start()
 tcp_thread.start()
+udp_forwarder_thread.start()
 
 
 # Maintenir le script en vie
