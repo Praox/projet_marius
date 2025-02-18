@@ -113,7 +113,7 @@ def send_tcp_data():
                 }
                 client.sendall(str(data).encode('utf-8'))
                 print(f"📤 Données envoyées : {data}")
-                time.sleep(1)  # Envoi toutes les secondes
+                time.sleep(0.2)  # Envoi toutes les secondes
 
         except ConnectionRefusedError:
             print(f"❌ Impossible de se connecter à {TCP_SERVER_IP}:{TCP_SERVER_PORT}")
