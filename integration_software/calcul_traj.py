@@ -76,8 +76,8 @@ def tcp_listener():
 def calcul_traj(latest_data):
     # Exemple de calculs
     # Utilisation de .get() pour éviter le KeyError si la clé n'existe pas
-    latitude = latest_data.get("latitude", None)
-    longitude = latest_data.get("longitude", None)
+    latitude = latest_data.get("lat", None)
+    longitude = latest_data.get("long", None)
     print(latest_data)
     if latitude is None or longitude is None:
         print("❌ Données manquantes pour le calcul de la trajectoire.")
