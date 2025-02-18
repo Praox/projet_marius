@@ -6,8 +6,8 @@ from pynmeagps import NMEAReader, NMEAMessage
 import time
 
 # --- CONFIGURATION ---
-TCP_SERVER_IP = "127.0.0.1"  # Adresse locale pour le serveur TCP
-TCP_SERVER_PORT = 4000  # Port d'envoi des données
+UDP_SERVER_IP = "127.0.0.1"  # Adresse locale pour le serveur UDP
+UDP_SERVER_PORT = 4000  # Port d'envoi des données
 PIXHAWK_PORT = "/dev/ttyACM0"
 BAUDRATE_PIXHAWK = 115200
 GPS_PORT = "/dev/ttyUSB0"
@@ -96,42 +96,36 @@ def read_sensors():
 
         time.sleep(0.1)  # Petite pause pour éviter de monopoliser le CPU
 
-# --- FONCTION 2 : ENVOI DES DONNÉES VIA TCP ---
-def send_tcp_data():
-    """Envoie les données IMU et GPS via TCP"""
+# --- FONCTION 2 : ENVOI DES DONNÉES VIA UDP ---
+def send_udp_data():
+    """Envoie les données IMU et GPS via UDP"""
     global latest_imu_data, latest_gps_data, stop_flag
 
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client:
-        try:
-            client.connect((TCP_SERVER_IP, TCP_SERVER_PORT))
-            print(f"📡 Connecté au serveur TCP {TCP_SERVER_IP}:{TCP_SERVER_PORT}")
+    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    print(f"📡 Envoi des données en UDP vers {UDP_SERVER_IP}:{UDP_SERVER_PORT}")
 
-            while not stop_flag:
-                data = {
-                    "imu": latest_imu_data,
-                    "gps": latest_gps_data
-                }
-                client.sendall(str(data).encode('utf-8'))
-                print(f"📤 Données envoyées : {data}")
-                time.sleep(0.2)  # Envoi toutes les secondes
+    while not stop_flag:
+        data = {
+            "imu": latest_imu_data,
+            "gps": latest_gps_data
+        }
+        sock.sendto(str(data).encode('utf-8'), (UDP_SERVER_IP, UDP_SERVER_PORT))
+        print(f"📤 Données envoyées : {data}")
+        time.sleep(1)  # Envoi toutes les secondes
 
-        except ConnectionRefusedError:
-            print(f"❌ Impossible de se connecter à {TCP_SERVER_IP}:{TCP_SERVER_PORT}")
-        except Exception as e:
-            print(f"❌ Erreur TCP : {e}")
-
-    print("📴 Connexion TCP fermée.")
+    sock.close()
+    print("📴 Connexion UDP fermée.")
 
 # --- LANCEMENT DES THREADS ---
 sensor_thread = threading.Thread(target=read_sensors, daemon=True)
-tcp_thread = threading.Thread(target=send_tcp_data, daemon=True)
+udp_thread = threading.Thread(target=send_udp_data, daemon=True)
 
 sensor_thread.start()
-tcp_thread.start()
+udp_thread.start()
 
 try:
     sensor_thread.join()
-    tcp_thread.join()
+    udp_thread.join()
 except KeyboardInterrupt:
     print("\n🛑 Interruption détectée, arrêt des processus.")
     stop_flag = True
