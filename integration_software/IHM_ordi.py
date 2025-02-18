@@ -1,7 +1,7 @@
 import socket
 
 UDP_IP = "0.0.0.0"  # Écoute toutes les interfaces
-UDP_PORT = 5000  # Port d'écoute
+UDP_PORT = 14555  # Port d'écoute
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.bind((UDP_IP, UDP_PORT))

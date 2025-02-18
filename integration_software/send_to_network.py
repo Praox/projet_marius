@@ -9,7 +9,7 @@ BUFFER_SIZE = 1024  # Taille du buffer
 
 # Adresse de destination pour l'envoi des données
 UDP_SEND_IP = "192.168.254.115"  # Adresse de ton PC sur le réseau privé
-UDP_SEND_PORT = 5000  # Port de réception sur ton PC
+UDP_SEND_PORT = 14555  # Port de réception sur ton PC
 
 # Stockage des dernières données reçues
 latest_data = {}

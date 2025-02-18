@@ -5,7 +5,7 @@ import json
 #LISTEN_IP = "0.0.0.0"  # L'ordinateur récepteur écoute sur toutes les interfaces réseau
 LISTEN_IP = "192.168.254.115"  # L'ordinateur récepteur écoute sur toutes les interfaces réseau
 #LISTEN_IP = "127.0.0.1"
-LISTEN_PORT = 14555
+LISTEN_PORT = 5000 #14555
 
 # Création du socket UDP
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
