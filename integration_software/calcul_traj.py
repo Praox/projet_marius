@@ -28,17 +28,8 @@ def udp_listener():
         except json.JSONDecodeError:
             print("❌ Erreur : données mal formatées")
 
-# --- SERVEUR API ---
-app = Flask(__name__)
-
-@app.route('/data', methods=['GET'])
-def get_data():
-    """Retourne les dernières données IMU et GPS"""
-    return jsonify(latest_data)
 
 # --- LANCEMENT DES THREADS ---
 udp_thread = threading.Thread(target=udp_listener, daemon=True)
 udp_thread.start()
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
