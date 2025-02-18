@@ -1,7 +1,6 @@
 import socket
 import json
 import threading
-from flask import Flask, jsonify
 
 # --- CONFIGURATION ---
 UDP_IP = "0.0.0.0"
@@ -28,8 +27,13 @@ def udp_listener():
         except json.JSONDecodeError:
             print("❌ Erreur : données mal formatées")
 
-
-# --- LANCEMENT DES THREADS ---
+# --- LANCEMENT DU THREAD UDP ---
 udp_thread = threading.Thread(target=udp_listener, daemon=True)
 udp_thread.start()
 
+# Maintenir le script en vie
+try:
+    while True:
+        pass
+except KeyboardInterrupt:
+    print("\n🛑 Arrêt du serveur UDP.")
