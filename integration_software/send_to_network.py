@@ -32,7 +32,7 @@ def udp_listener():
             print(f"📥 Données reçues de {addr}: {latest_data}")
             
             # Envoyer immédiatement les données sur le réseau privé
-            udp_forwarder(decoded_data)
+            udp_forwarder(latest_data)
 
         except json.JSONDecodeError:
             print("❌ Erreur : données reçues mal formatées")
@@ -48,6 +48,7 @@ def udp_forwarder(data):
         print(f"📤 Données envoyées à {UDP_SEND_IP}:{UDP_SEND_PORT}")
     except Exception as e:
         print(f"❌ Erreur lors de l'envoi des données : {e}")
+
 
 # --- LANCEMENT DU THREAD UDP ---
 udp_thread = threading.Thread(target=udp_listener, daemon=True)
