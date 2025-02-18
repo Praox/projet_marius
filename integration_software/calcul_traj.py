@@ -75,8 +75,13 @@ def tcp_listener():
 
 def calcul_traj(latest_data):
     # Exemple de calculs
-    latitude = latest_data["latitude"]
-    longitude = latest_data["longitude"]
+    # Utilisation de .get() pour éviter le KeyError si la clé n'existe pas
+    latitude = latest_data.get("latitude", None)
+    longitude = latest_data.get("longitude", None)
+
+    if latitude is None or longitude is None:
+        print("❌ Données manquantes pour le calcul de la trajectoire.")
+        return None  # Retourne None ou une valeur par défaut si les données sont manquantes
 
     # Calcul simple de la différence entre la latitude et la longitude (comme exemple)
     cap = latitude - longitude
@@ -89,12 +94,13 @@ def udp_forwarder():
     while not stop_flag:
         if latest_data:  # Vérifie si les données sont disponibles
             cap = calcul_traj(latest_data)  # Calcule la trajectoire (ou cap)
-            try:
-                send_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-                send_sock.sendto(str(cap).encode('utf-8'), (UDP_SEND_IP, UDP_SEND_PORT_NETWORK))  # Envoie les données calculées
-                print(f"📤 Données envoyées : {cap}")
-            except Exception as e:
-                print(f"❌ Erreur lors de l'envoi des données : {e}")
+            if cap is not None:
+                try:
+                    send_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+                    send_sock.sendto(str(cap).encode('utf-8'), (UDP_SEND_IP, UDP_SEND_PORT_NETWORK))  # Envoie les données calculées
+                    print(f"📤 Données envoyées : {cap}")
+                except Exception as e:
+                    print(f"❌ Erreur lors de l'envoi des données : {e}")
         else:
             print("⚠️ Pas de données à envoyer, attend les nouvelles données UDP.")
         
