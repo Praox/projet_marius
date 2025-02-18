@@ -2,7 +2,7 @@ import socket
 import threading
 
 # Adresse de l'antenne réceptrice UDP
-RECEIVER_IP = "192.168.254.115"   
+RECEIVER_IP = "192.168.254.115"
 RECEIVER_PORT = 14555
 ADDR = (RECEIVER_IP, RECEIVER_PORT)
 
@@ -17,7 +17,6 @@ stop_flag = False
 def udp_sender():
     global stop_flag
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-
     print("Émetteur UDP prêt à envoyer des messages.")
 
     while not stop_flag:
@@ -28,36 +27,47 @@ def udp_sender():
     sock.close()
     print("Transmission UDP arrêtée.")
 
-# Fonction de réception TCP
+# Fonction de réception TCP (tourne en boucle infinie)
 def tcp_listener():
     global stop_flag
     serveur = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    serveur.bind((TCP_IP, TCP_PORT))  
+    serveur.bind((TCP_IP, TCP_PORT))
     serveur.listen()
 
     print(f"Serveur TCP en écoute sur {TCP_IP}:{TCP_PORT}...")
 
-    client, infosclient = serveur.accept()
-    request = client.recv(1024)
-    
-    if request:
-        print(f"Message TCP reçu : {request.decode('utf-8')}")
-        print(f"IP client connecté : {infosclient[0]}")
-        stop_flag = True  # Active le flag d'arrêt
+    while not stop_flag:
+        try:
+            client, infosclient = serveur.accept()
+            request = client.recv(1024)
+            message = request.decode('utf-8').strip()
+            
+            print(f"Message TCP reçu : {message}")
+            print(f"IP client connecté : {infosclient[0]}")
+            
+            if message.lower() == "stop":
+                print("Message d'arrêt reçu, arrêt de l'émission UDP.")
+                stop_flag = True  # Active le flag pour stopper l'UDP
+            
+            client.close()
+        except Exception as e:
+            print(f"Erreur TCP : {e}")
+            break
 
-    client.close()
     serveur.close()
     print("Serveur TCP fermé.")
 
 # Lancer les threads
 udp_thread = threading.Thread(target=udp_sender)
-tcp_thread = threading.Thread(target=tcp_listener)
+tcp_thread = threading.Thread(target=tcp_listener, daemon=True)  # TCP tourne en arrière-plan
 
 udp_thread.start()
 tcp_thread.start()
 
-# Attendre la fin des threads
-udp_thread.join()
-tcp_thread.join()
+try:
+    udp_thread.join()  # Attendre la fin de l'UDP
+except KeyboardInterrupt:
+    print("\nInterruption détectée, arrêt des serveurs.")
+    stop_flag = True
 
 print("Programme terminé.")
