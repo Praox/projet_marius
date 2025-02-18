@@ -74,18 +74,16 @@ def tcp_listener():
     print("Serveur TCP fermé.")
 
 def calcul_traj(latest_data):
-    # Exemple de calculs
-    # Utilisation de .get() pour éviter le KeyError si la clé n'existe pas
-    latitude = latest_data.get("lat", None)
-    longitude = latest_data.get("long", None)
-    print(latitude)
-    print(longitude)
-    if latitude is None or longitude is None:
+    # Exemple de calculs en utilisant acc['x']
+    acc_x = latest_data.get('imu', {}).get('acc', {}).get('x', None)
+
+    if acc_x is None:
         print("❌ Données manquantes pour le calcul de la trajectoire.")
         return None  # Retourne None ou une valeur par défaut si les données sont manquantes
 
-    # Calcul simple de la différence entre la latitude et la longitude (comme exemple)
-    cap = latitude - longitude
+    # Par exemple, supposons que l'on effectue un calcul basé sur acc_x.
+    # Calcul du cap ou d'un autre paramètre avec acc_x.
+    cap = acc_x  # Exemple de calcul (tu peux adapter avec d'autres formules si nécessaire)
     return cap
 
 # --- FONCTION D'ENVOI UDP ---
