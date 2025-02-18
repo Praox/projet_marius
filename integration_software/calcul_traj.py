@@ -78,7 +78,8 @@ def calcul_traj(latest_data):
     # Utilisation de .get() pour éviter le KeyError si la clé n'existe pas
     latitude = latest_data.get("lat", None)
     longitude = latest_data.get("long", None)
-    print(latest_data)
+    print(latitude)
+    print(longitude)
     if latitude is None or longitude is None:
         print("❌ Données manquantes pour le calcul de la trajectoire.")
         return None  # Retourne None ou une valeur par défaut si les données sont manquantes
