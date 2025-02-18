@@ -3,10 +3,11 @@ import threading
 import serial
 from pymavlink import mavutil
 from pynmeagps import NMEAReader, NMEAMessage
+import json
 import time
 
 # --- CONFIGURATION ---
-UDP_SERVER_IP = "127.0.0.1"  # Adresse locale pour le serveur UDP
+UDP_SERVER_IP = "127.0.0.1"  # Adresse du serveur UDP
 UDP_SERVER_PORT = 4000  # Port d'envoi des données
 PIXHAWK_PORT = "/dev/ttyACM0"
 BAUDRATE_PIXHAWK = 115200
@@ -34,12 +35,12 @@ master.mav.request_data_stream_send(
     1
 )
 
-# --- FONCTION 1 : LECTURE DES DONNÉES CAPTEURS ---
+# --- FONCTION : LECTURE DES CAPTEURS ---
 def read_sensors():
-    """Lit les données des capteurs Pixhawk (IMU) et GPS en continu"""
+    """Lit les données IMU de la Pixhawk et les données GPS."""
     global latest_imu_data, latest_gps_data, stop_flag
 
-    # Lancer la lecture GPS en parallèle
+    # Lecture GPS en thread
     def gps_reader():
         global latest_gps_data
         try:
@@ -53,16 +54,12 @@ def read_sensors():
                         if isinstance(parsed_data, NMEAMessage):
                             if parsed_data.msgID == "GGA":  
                                 latest_gps_data = {
-                                    "type": "GGA",
                                     "lat": parsed_data.lat,
                                     "lon": parsed_data.lon,
                                     "alt": parsed_data.alt
                                 }
                             elif parsed_data.msgID == "VTG":  
-                                latest_gps_data = {
-                                    "type": "VTG",
-                                    "speed": parsed_data.spd_over_grnd_kmph
-                                }
+                                latest_gps_data["speed"] = parsed_data.spd_over_grnd_kmph
                     except Exception as e:
                         print(f"❌ Erreur GPS : {e}")
         except serial.SerialException as e:
@@ -70,48 +67,41 @@ def read_sensors():
 
         print("📴 Lecture GPS arrêtée.")
 
-    # Lancer GPS en thread
     gps_thread = threading.Thread(target=gps_reader, daemon=True)
     gps_thread.start()
 
-    # Lecture des données Pixhawk en boucle
+    # Lecture IMU
     while not stop_flag:
         msg = master.recv_match(type=['RAW_IMU', 'SCALED_IMU2', 'SCALED_IMU3', 'ATTITUDE'], blocking=True)
         if msg:
             msg_type = msg.get_type()
             if msg_type in ['RAW_IMU', 'SCALED_IMU2', 'SCALED_IMU3']:
                 latest_imu_data = {
-                    "type": msg_type,
                     "acc": {"x": msg.xacc, "y": msg.yacc, "z": msg.zacc},
                     "gyro": {"x": msg.xgyro, "y": msg.ygyro, "z": msg.zgyro},
                     "mag": {"x": msg.xmag, "y": msg.ymag, "z": msg.zmag}
                 }
             elif msg_type == 'ATTITUDE':
-                latest_imu_data = {
-                    "type": "ATTITUDE",
+                latest_imu_data.update({
                     "roll": msg.roll,
                     "pitch": msg.pitch,
                     "yaw": msg.yaw
-                }
+                })
+        time.sleep(0.1)
 
-        time.sleep(0.1)  # Petite pause pour éviter de monopoliser le CPU
-
-# --- FONCTION 2 : ENVOI DES DONNÉES VIA UDP ---
+# --- FONCTION : ENVOI UDP ---
 def send_udp_data():
-    """Envoie les données IMU et GPS via UDP"""
+    """Envoie les données IMU et GPS en JSON via UDP."""
     global latest_imu_data, latest_gps_data, stop_flag
 
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     print(f"📡 Envoi des données en UDP vers {UDP_SERVER_IP}:{UDP_SERVER_PORT}")
 
     while not stop_flag:
-        data = {
-            "imu": latest_imu_data,
-            "gps": latest_gps_data
-        }
-        sock.sendto(str(data).encode('utf-8'), (UDP_SERVER_IP, UDP_SERVER_PORT))
+        data = json.dumps({"imu": latest_imu_data, "gps": latest_gps_data})
+        sock.sendto(data.encode('utf-8'), (UDP_SERVER_IP, UDP_SERVER_PORT))
         print(f"📤 Données envoyées : {data}")
-        time.sleep(1)  # Envoi toutes les secondes
+        time.sleep(1)
 
     sock.close()
     print("📴 Connexion UDP fermée.")
@@ -127,7 +117,5 @@ try:
     sensor_thread.join()
     udp_thread.join()
 except KeyboardInterrupt:
-    print("\n🛑 Interruption détectée, arrêt des processus.")
+    print("\n🛑 Interruption détectée, arrêt du client.")
     stop_flag = True
-
-print("🏁 Programme terminé.")
