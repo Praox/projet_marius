@@ -5,6 +5,7 @@ from pymavlink import mavutil
 from pynmeagps import NMEAReader, NMEAMessage
 import json
 import time
+import udp_utils  # Importer le module personnalisé
 
 # --- CONFIGURATION ---
 UDP_SERVER_IP = "127.0.0.1"  # Adresse du serveur UDP
