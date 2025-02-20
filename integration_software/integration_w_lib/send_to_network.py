@@ -9,6 +9,10 @@ UDP_LISTEN_PORT_TRAJ = 4002
 UDP_SEND_IP = "192.168.254.115"
 UDP_SEND_PORT = 14555
 
+# Liste des destinations UDP
+UDP_DESTINATIONS = [
+    (UDP_SEND_IP, UDP_SEND_PORT)]
+
 # --- CALLBACK POUR LE TRAITEMENT DES DONNÉES ---
 def process_and_forward(data):
     """Callback pour traiter et forwarder les données UDP"""
