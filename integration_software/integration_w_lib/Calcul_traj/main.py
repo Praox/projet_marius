@@ -79,10 +79,24 @@ def process_and_forward(data):
     """Callback pour traiter et forwarder les données UDP"""
     global latest_data
     try:
-        latest_data = tools.json.loads(data)  # Assure-toi que 'data' est bien un JSON
-        cap = [total_path, tack_points, penalty_grid, cap___]
-        if cap is not None:  
-            tools.udp_forwarder(cap, UDP_DESTINATIONS)
+        #latest_data = tools.json.loads(data)  # Assure-toi que 'data' est bien un JSON
+        # Création d'un dictionnaire structuré
+        data = {
+            "total_path": total_path,  # Liste de tuples (x, y)
+            "tack_points": tack_points,  # Liste de tuples ((x, y), angle)
+            "penalty_grid": penalty_grid.tolist(),  # Convertir en liste pour JSON
+            "cap": {
+                "cap_boussole_corrige": cap___[0],
+                "cap_vent_relatif": cap___[1],
+                "estimated_time": cap___[2],
+                "estimated_speed": cap___[3],
+                "distance": cap___[4],
+                "vecteur_vitesse": cap___[5]  # Tuple (Vx, Vy)
+                }
+            }
+        #cap = [total_path, tack_points, penalty_grid, cap___]
+        if data is not None:  
+            tools.udp_forwarder(data, UDP_DESTINATIONS)
     except json.JSONDecodeError:
         print("❌ Erreur : données reçues mal formatées")
 
