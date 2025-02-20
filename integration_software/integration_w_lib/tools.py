@@ -36,7 +36,7 @@ def udp_forwarder(data, destinations):
 
         for ip, port in destinations:
             send_sock.sendto(encoded_data, (ip, port))
-            print(f"📤 Données envoyées à {ip}:{port}")
+            print(f"📤 Données envoyées à {ip}:{port} : {data}")
 
     except Exception as e:
         print(f"❌ Erreur lors de l'envoi des données : {e}")
