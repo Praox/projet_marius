@@ -2,7 +2,11 @@ import cmd
 import navigation
 import planification
 import numpy as np
+import time
+import tools
 import matplotlib.pyplot as plt
+import threading
+import json
 
 # Initialisation de la grille
 grid = np.zeros((200, 200))
@@ -44,6 +48,74 @@ total_path, tack_points, penalty_grid = planification.compute_full_path(waypoint
 cap___ = navigation.navigation(tack_points, wind_angle, wind_speed, position_GPS, taille_maille, rayon_tolerance)
 (Vx, Vy) = cap___[5]
 
+# --- CONFIGURATION ---
+
+UDP_IP = "0.0.0.0"  # Écoute sur toutes les interfaces
+UDP_PORT = 4000  # Port UDP
+BUFFER_SIZE = 1024  # Taille du buffer
+
+# Adresse du serveur TCP
+TCP_IP = "192.168.254.120"
+TCP_PORT = 3000
+
+# Adresse Udp local
+UDP_SEND_IP = "127.0.0.1"  # Adresse du serveur UDP
+UDP_SEND_PORT_NETWORK = 4002  # Port d'envoi des données
+
+# Liste des destinations UDP
+UDP_DESTINATIONS = [
+    (UDP_SEND_IP, UDP_SEND_PORT_NETWORK )]
+
+# Flag d'arrêt
+stop_flag = False
+
+# Stockage des dernières données reçues
+latest_data = {}
+
+# --- CALLBACK POUR LE TRAITEMENT DES DONNÉES ---
+def process_and_forward(data):
+    """Callback pour traiter et forwarder les données UDP"""
+    global latest_data
+    try:
+        latest_data = tools.json.loads(data)  # Assure-toi que 'data' est bien un JSON
+        cap = [total_path, tack_points, penalty_grid, cap___]
+        if cap is not None:  
+            tools.udp_forwarder(cap, UDP_DESTINATIONS)
+    except json.JSONDecodeError:
+        print("❌ Erreur : données reçues mal formatées")
+
+
+# --- LANCEMENT DES THREADS UDP ---
+udp_thread = threading.Thread(
+    target=tools.udp_listener,
+    args=(UDP_IP, UDP_PORT, process_and_forward),
+    daemon=True
+)
+tcp_thread = threading.Thread(
+    target=tools.tcp_listener,
+    args= (TCP_IP, TCP_PORT),
+    daemon=True
+)
+
+# --- LANCEMENT DES THREADS UDP ---
+udp_thread.start()
+try:
+    tcp_thread.start()
+except Exception as e:
+    print(f"❌ Erreur lors du démarrage du serveur TCP : {e}")
+
+
+
+# Maintenir le script en vie
+try:
+    while True:
+        pass
+except KeyboardInterrupt:
+    print("\nInterruption détectée, arrêt des serveurs.")
+    stop_flag = True
+
+
+''''
 plt.imshow(penalty_grid, cmap='gray_r', origin='lower')
 if total_path:
     path_x, path_y = zip(*total_path)
@@ -65,10 +137,8 @@ plt.quiver(100, 175, -np.sin(np.radians(wind_angle))*10, -np.cos(np.radians(wind
 plt.quiver(position_GPS[1], position_GPS[0], Vy*10, Vx*10, angles='xy', scale_units='xy', scale=1, color='red', label='Vecteur vitesse')
 
 
-def main():
-  return None
-
 plt.title(f"Simulation - Vent {wind_angle}° à {wind_speed} nds")
 plt.legend()
 plt.grid()
 plt.show()
+'''
