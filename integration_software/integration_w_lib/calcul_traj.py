@@ -1,6 +1,6 @@
-import socket
-import json
 import threading
+import json
+import tools
 
 # --- CONFIGURATION ---
 
@@ -16,12 +16,27 @@ TCP_PORT = 3000
 UDP_SEND_IP = "127.0.0.1"  # Adresse du serveur UDP
 UDP_SEND_PORT_NETWORK = 4002  # Port d'envoi des données
 
+# Liste des destinations UDP
+UDP_DESTINATIONS = [
+    (UDP_SEND_IP, UDP_SEND_PORT_NETWORK )]
+
 # Flag d'arrêt
 stop_flag = False
 
 # Stockage des dernières données reçues
 latest_data = {}
 
+# --- CALLBACK POUR LE TRAITEMENT DES DONNÉES ---
+def process_and_forward(data):
+    """Callback pour traiter et forwarder les données UDP"""
+    global latest_data
+    try:
+        latest_data = tools.json.loads(data)  # Assure-toi que 'data' est bien un JSON
+        cap = calcul_traj(latest_data)  
+        if cap is not None:  
+            tools.udp_forwarder(cap, UDP_DESTINATIONS)
+    except json.JSONDecodeError:
+        print("❌ Erreur : données reçues mal formatées")
 
 
 
@@ -38,33 +53,26 @@ def calcul_traj(latest_data):
     cap = acc_x  # Exemple de calcul (tu peux adapter avec d'autres formules si nécessaire)
     return cap
 
-# --- FONCTION D'ENVOI UDP ---
-def udp_forwarder():
-    """Envoie les données calculées en UDP sur le réseau."""
-    global latest_data
-    while not stop_flag:
-        if latest_data:  # Vérifie si les données sont disponibles
-            cap = calcul_traj(latest_data)  # Calcule la trajectoire (ou cap)
-            if cap is not None:
-                try:
-                    send_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-                    send_sock.sendto(str(cap).encode('utf-8'), (UDP_SEND_IP, UDP_SEND_PORT_NETWORK))  # Envoie les données calculées
-                    print(f"📤 Données envoyées : {cap}")
-                except Exception as e:
-                    print(f"❌ Erreur lors de l'envoi des données : {e}")
-        else:
-            print("⚠️ Pas de données à envoyer, attend les nouvelles données UDP.")
-        
-        # Pour éviter une boucle trop rapide, on peut ajouter un petit délai
-        threading.Event().wait(1)
+# --- LANCEMENT DES THREADS UDP ---
+udp_thread = threading.Thread(
+    target=tools.udp_listener,
+    args=(UDP_IP, UDP_PORT, process_and_forward),
+    daemon=True
+)
+tcp_thread = threading.Thread(
+    target=tools.tcp_listener,
+    args= (TCP_IP, TCP_PORT),
+    daemon=True
+)
 
 # --- LANCEMENT DES THREADS UDP ---
-udp_thread = threading.Thread(target=udp_listener, daemon=True)
-tcp_thread = threading.Thread(target=tcp_listener, daemon=True)  # TCP tourne en arrière-plan
-udp_forwarder_thread = threading.Thread(target=udp_forwarder, daemon=True)  # Envoi des données calculées
 udp_thread.start()
-tcp_thread.start()
-udp_forwarder_thread.start()
+try:
+    tcp_thread.start()
+except Exception as e:
+    print(f"❌ Erreur lors du démarrage du serveur TCP : {e}")
+
+
 
 # Maintenir le script en vie
 try:
