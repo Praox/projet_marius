@@ -16,7 +16,7 @@ UDP_DESTINATIONS = [
 # --- CALLBACK POUR LE TRAITEMENT DES DONNÉES ---
 def process_and_forward(data):
     """Callback pour traiter et forwarder les données UDP"""
-    tools.udp_forwarder(data, UDP_SEND_IP, UDP_SEND_PORT)
+    tools.udp_forwarder(data, UDP_DESTINATIONS)
 
 # --- LANCEMENT DES THREADS UDP ---
 udp_thread_sensors = threading.Thread(
