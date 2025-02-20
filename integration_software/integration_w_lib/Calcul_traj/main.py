@@ -4,7 +4,7 @@ import planification
 import numpy as np
 import time
 import tools
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import threading
 import json
 
@@ -25,6 +25,7 @@ for j in range(0, 25):
 for j in range(75, 125):
     grid[150, j] = 1
 
+''''
 # Fonction d'affichage des zone de tolérance des waypoints
 def draw_tolerance_circle(point, rayon_tolerance, color='r', linestyle='dashed'):
     """
@@ -32,6 +33,7 @@ def draw_tolerance_circle(point, rayon_tolerance, color='r', linestyle='dashed')
     """
     cercle = plt.Circle((point[1], point[0]), rayon_tolerance, color=color, fill=False, linestyle=linestyle)
     plt.gca().add_patch(cercle)
+'''
 
 
 # Paramètres de simulation
