@@ -83,14 +83,12 @@ def process_and_forward(data):
         # Création d'un dictionnaire structuré
         data = {
             "tack_points": tack_points,  # Liste de tuples ((x, y), angle)
-            "cap": {
-                "cap_boussole_corrige": cap___[0],
-                "cap_vent_relatif": cap___[1],
-                "estimated_time": cap___[2],
-                "estimated_speed": cap___[3],
-                "distance": cap___[4],
-                "vecteur_vitesse": cap___[5]  # Tuple (Vx, Vy)
-                }
+            "cap_boussole_corrige": cap___[0],
+            "cap_vent_relatif": cap___[1],
+            "estimated_time": cap___[2],
+            "estimated_speed": cap___[3],
+            "distance": cap___[4],
+            "vecteur_vitesse": cap___[5]  # Tuple (Vx, Vy)
             }
         #cap = [total_path, tack_points, penalty_grid, cap___]
         if data is not None:  
