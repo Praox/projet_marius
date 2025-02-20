@@ -51,7 +51,7 @@ def tcp_listener(TCP_IP,TCP_PORT):
 
     print(f"Serveur TCP en écoute sur {TCP_IP}:{TCP_PORT}...")
 
-    while not stop_flag:
+    while True:
         try:
             client, infosclient = serveur.accept()
             request = client.recv(1024)
