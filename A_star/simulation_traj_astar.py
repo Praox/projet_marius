@@ -165,7 +165,7 @@ plt.figure(figsize=(10, 10))
 
 
 
-def navigation(next_waypoint, wind_angle, wind_speed, position_GPS, taille_maille, rayon_tolerance):
+def navigation(tack_points, wind_angle, wind_speed, position_GPS, taille_maille, rayon_tolerance):
 
     if not tack_points:  # Vérifie s'il reste des waypoints
         print("Tous les waypoints ont été validés.")
