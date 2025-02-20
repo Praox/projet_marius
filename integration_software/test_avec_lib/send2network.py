@@ -12,7 +12,7 @@ UDP_SEND_PORT = 14555
 # --- CALLBACK POUR LE TRAITEMENT DES DONNÉES ---
 def process_and_forward(data):
     """Callback pour traiter et forwarder les données UDP"""
-    udp_utils.udp_forwarder(data, UDP_SEND_IP, UDP_SEND_PORT)
+    udp_utils.udp_forwarder(data, (UDP_SEND_IP, UDP_SEND_PORT))
 
 # --- LANCEMENT DES THREADS UDP ---
 udp_thread_sensors = threading.Thread(
