@@ -82,7 +82,6 @@ def process_and_forward(data):
         #latest_data = tools.json.loads(data)  # Assure-toi que 'data' est bien un JSON
         # Création d'un dictionnaire structuré
         data = {
-            "total_path": total_path,  # Liste de tuples (x, y)
             "tack_points": tack_points,  # Liste de tuples ((x, y), angle)
             "cap": {
                 "cap_boussole_corrige": cap___[0],
