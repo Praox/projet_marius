@@ -84,7 +84,6 @@ def process_and_forward(data):
         data = {
             "total_path": total_path,  # Liste de tuples (x, y)
             "tack_points": tack_points,  # Liste de tuples ((x, y), angle)
-            "penalty_grid": penalty_grid.tolist(),  # Convertir en liste pour JSON
             "cap": {
                 "cap_boussole_corrige": cap___[0],
                 "cap_vent_relatif": cap___[1],

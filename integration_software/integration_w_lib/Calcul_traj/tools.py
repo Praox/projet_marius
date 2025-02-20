@@ -1,7 +1,6 @@
 # udp_utils.py
 import socket
 import json
-import zlib
 
 BUFFER_SIZE = 1024  # Taille du buffer
 
@@ -34,7 +33,6 @@ def udp_forwarder(data, destinations):
         send_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         json_data = data if isinstance(data, str) else json.dumps(data)
         encoded_data = json_data.encode('utf-8')
-        compressed_data = zlib.compress(json_data.encode())
 
         for ip, port in destinations:
             send_sock.sendto(encoded_data, (ip, port))
