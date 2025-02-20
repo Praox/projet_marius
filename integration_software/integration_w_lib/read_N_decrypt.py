@@ -1,16 +1,15 @@
-import socket
 import threading
 import serial
-from pymavlink import mavutil
-from pynmeagps import NMEAReader, NMEAMessage
 import json
 import time
-import udp_utils  # Importer le module personnalisé
+import tools  # Importation de la bibliothèque UDP
+from pymavlink import mavutil
+from pynmeagps import NMEAReader, NMEAMessage
 
 # --- CONFIGURATION ---
-UDP_SERVER_IP = "127.0.0.1"  # Adresse du serveur UDP
-UDP_SERVER_PORT_TRAJ = 4000  # Port d'envoi des données
-UDP_SERVER_PORT_NETWORK = 4001  # Port d'envoi des données
+UDP_SERVER_IP = "127.0.0.1"
+UDP_SERVER_PORT_TRAJ = 4000
+UDP_SERVER_PORT_NETWORK = 4001
 PIXHAWK_PORT = "/dev/ttyACM0"
 BAUDRATE_PIXHAWK = 115200
 GPS_PORT = "/dev/ttyUSB0"
@@ -22,15 +21,12 @@ UDP_DESTINATIONS = [
     (UDP_SERVER_IP, UDP_SERVER_PORT_NETWORK)
 ]
 
-
-# Stockage des dernières données lues
+# Stockage des dernières données
 latest_imu_data = {}
 latest_gps_data = {}
-
-# Flag d'arrêt global
 stop_flag = False
 
-# --- CONNEXION À LA PIXHAWK ---
+# --- Connexion Pixhawk ---
 print(f"Connexion à la Pixhawk sur {PIXHAWK_PORT} à {BAUDRATE_PIXHAWK} bauds...")
 master = mavutil.mavlink_connection(PIXHAWK_PORT, baud=BAUDRATE_PIXHAWK)
 master.wait_heartbeat()
@@ -40,16 +36,13 @@ print("✅ Connexion établie avec la Pixhawk!")
 master.mav.request_data_stream_send(
     master.target_system, master.target_component,
     mavutil.mavlink.MAV_DATA_STREAM_RAW_SENSORS,
-    10,  # Fréquence en Hz
-    1
+    10, 1
 )
 
-# --- FONCTION : LECTURE DES CAPTEURS ---
+# --- Fonction de lecture des capteurs ---
 def read_sensors():
-    """Lit les données IMU de la Pixhawk et les données GPS."""
     global latest_imu_data, latest_gps_data, stop_flag
 
-    # Lecture GPS en thread
     def gps_reader():
         global latest_gps_data
         try:
@@ -59,15 +52,15 @@ def read_sensors():
 
                 while not stop_flag:
                     try:
-                        (raw_data, parsed_data) = nmea_reader.read()
+                        raw_data, parsed_data = nmea_reader.read()
                         if isinstance(parsed_data, NMEAMessage):
-                            if parsed_data.msgID == "GGA":  
+                            if parsed_data.msgID == "GGA":
                                 latest_gps_data = {
                                     "lat": parsed_data.lat,
                                     "lon": parsed_data.lon,
                                     "alt": parsed_data.alt
                                 }
-                            elif parsed_data.msgID == "VTG":  
+                            elif parsed_data.msgID == "VTG":
                                 latest_gps_data["speed"] = parsed_data.spd_over_grnd_kmph
                     except Exception as e:
                         print(f"❌ Erreur GPS : {e}")
@@ -79,7 +72,6 @@ def read_sensors():
     gps_thread = threading.Thread(target=gps_reader, daemon=True)
     gps_thread.start()
 
-    # Lecture IMU
     while not stop_flag:
         msg = master.recv_match(type=['RAW_IMU', 'SCALED_IMU2', 'SCALED_IMU3', 'ATTITUDE'], blocking=True)
         if msg:
@@ -97,8 +89,8 @@ def read_sensors():
                     "yaw": msg.yaw
                 })
         time.sleep(0.1)
- 
-#  --- Fonction d'envoi UDP ---
+
+# --- Fonction d'envoi UDP ---
 def send_udp_data():
     global latest_imu_data, latest_gps_data, stop_flag
 
@@ -106,7 +98,7 @@ def send_udp_data():
 
     while not stop_flag:
         data = {"imu": latest_imu_data, "gps": latest_gps_data}
-        udp_utils.udp_forwarder(data, UDP_DESTINATIONS)
+        tools.udp_forwarder(data, UDP_DESTINATIONS)
         time.sleep(1)
 
     print("📴 Connexion UDP fermée.")
