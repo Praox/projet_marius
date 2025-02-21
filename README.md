@@ -15,5 +15,7 @@ Nous avons decidé de structurer le code en plusieur scripts python distinct qui
 IMPORTANT:
 IP fixe de l'ordinateur doit être : 192.168.254.15
 Il faut aussi autorisé la communication en UDP sur le port 14555
-
+La PI elle a pour IP fixe 192.168.254.120
+L'antenne de la PI : 192.168.254.101
+L'antenne de l'ordi : 192.168.254.102
 
