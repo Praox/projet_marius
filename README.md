@@ -12,3 +12,8 @@ Nous avons decidé de structurer le code en plusieur scripts python distinct qui
 - Le cinquième script : client_tcp.py (/udp_test_protocole..) sert lui à envoyé des data et prochainement des commande en TCP au script de calcul de trajectoire.
 
 
+IMPORTANT:
+IP fixe de l'ordinateur doit être : 192.168.254.15
+Il faut aussi autorisé la communication en UDP sur le port 14555
+
+
