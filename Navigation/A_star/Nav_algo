@@ -1,1 +1,84 @@
-from python import matplotlib
+import math
+import numpy as np
+
+# Paramètres du contrôleur
+delta_r_max = math.pi / 4  # Angle maximal du gouvernail
+r = 50  # Distance de coupure (en mètres)
+gamma_inf = math.pi / 4  # Angle d'incidence
+zeta = math.pi / 3  # Angle de près
+
+# Variables d'état
+q = 1  # Variable d'état discrète (tack), initialisée à 1
+
+# Fonction pour calculer la distance algébrique à la ligne
+def algebraic_distance(a, b, m):
+    u = b - a
+    v = m - a
+    return np.linalg.det(np.array([u, v])) / np.linalg.norm(u)
+
+# Fonction pour calculer l'angle de la ligne à suivre
+def line_angle(a, b):
+    u = b - a
+    return math.atan2(u[1], u[0])
+
+# Fonction pour calculer l'angle nominal
+def nominal_angle(phi, e):
+    return phi - (2 * gamma_inf / math.pi) * math.atan(e / r)
+
+# Fonction pour ajuster le gouvernail
+def adjust_rudder(theta, theta_target):
+    error = math.sin(theta - theta_target)
+    if math.cos(theta - theta_target) >= 0:
+        # Contrôle proportionnel
+        delta_r = -error * delta_r_max
+    else:
+        # Contrôle bang-bang
+        delta_r = delta_r_max if error > 0 else -delta_r_max
+    return delta_r
+
+# Fonction pour ajuster la voile
+def adjust_sail(psi, theta_target):
+    return (math.pi / 2) * ((math.cos(psi - theta_target) + 1)) / 2
+
+# Fonction principale du contrôleur
+def sailboat_controller(a, b, m, theta, psi):
+    global q
+
+    # Étape 1: Calcul de la distance algébrique
+    e = algebraic_distance(a, b, m)
+
+    # Étape 2: Mise à jour de la variable d'état q
+    if abs(e) > r / 2:
+        q = 1 if e > 0 else -1
+
+    # Étape 3: Calcul de l'angle de la ligne
+    phi = line_angle(a, b)
+
+    # Étape 4: Calcul de l'angle nominal
+    theta_star = nominal_angle(phi, e)
+
+    # Étape 5: Vérification de la faisabilité de l'angle nominal
+    if math.cos(psi - theta_star) + math.cos(zeta) < 0:
+        # Étape 7: Mode de près
+        theta_target = math.pi + psi - q * zeta
+    else:
+        # Étape 8: Conserver l'angle nominal
+        theta_target = theta_star
+
+    # Étape 10: Ajustement du gouvernail
+    delta_r = adjust_rudder(theta, theta_target)
+
+    # Étape 12: Ajustement de la voile
+    delta_s_max = adjust_sail(psi, theta_target)
+
+    return delta_r, delta_s_max
+
+# Exemple d'utilisation
+a = np.array([0, 0])  # Point de départ de la ligne
+b = np.array([100, 100])  # Point d'arrivée de la ligne
+m = np.array([50, 50])  # Position actuelle du voilier
+theta = math.pi / 4  # Cap actuel du voilier
+psi = math.pi / 2  # Direction du vent
+
+delta_r, delta_s_max = sailboat_controller(a, b, m, theta, psi)
+print(f"Angle du gouvernail: {delta_r}, Angle maximal de la voile: {delta_s_max}")
